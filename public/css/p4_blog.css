@@ -1,0 +1,97 @@
+body 
+{
+	font-family: 'Bitter', serif;
+    background-image: url("public/img/fond.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+/* Images */
+img 
+{					
+	width: 100%;
+}
+/* Barre de navigation */
+.navbar {
+	border-radius: 0%;  	
+	}
+.navbar-header a 
+{
+	font-size: 1.5em;
+	margin-left: 1em;
+}
+.nav a 
+{
+	font-size: 1.2em;
+	margin-left: 1em;
+}
+ /* Jumbotron */
+}
+.jumbotron 
+{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.jumbotron p {
+    font-size: 18px;
+}
+h1.carousel-caption {
+	margin-bottom: 440px;
+}
+h1 span {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 0.8em;
+}
+/* Image de carousel */
+.carousel img 
+{  	
+	max-height: 100vh;
+}
+/* Accueil */
+p#mot_auteur {
+	font-size: 20px;
+}
+/* Boutons commentaires signalés */
+button {
+    
+    border-radius: 0.5em;
+}
+button.no-signal a {
+    font-size: 0.8em; 
+}
+.signal {
+    font-size: 0.8em;
+    color: red;
+    border: solid 1px #ccc;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    background-color: white;
+}
+.signal_ok {
+    font-size: 0.8em;
+    color: #337ab7    
+}
+i.fas.fa-thumbs-up {
+    margin-left: 22.5%
+}
+i.fas.fa-trash-alt{
+	margin-left: 22.5%
+}
+/* Formulaire de connexion */
+.connex-form {
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-bottom: 2em;
+	max-width: 100%;
+	border: 5px solid black;
+	padding: 1em;
+}
+
+/*Gestion spécifique Taille du titre / écran < 400px */
+@media (max-width: 400px)
+{
+	.navbar-header a, .carousel-caption
+	{
+		font-size: 1em;
+	}
+}
