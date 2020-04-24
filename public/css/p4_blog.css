@@ -26,8 +26,20 @@ img
 	font-size: 1.2em;
 	margin-left: 1em;
 }
- /* Jumbotron */
+/* Connexion */
+li#adminConnex.afficherConnexh a {
+	display: none;
 }
+li#adminConnex.afficherConnex a {
+	display: block;
+}
+li#adminDeconnex.afficherDeconnexh a {
+	display: none;
+}
+li#adminDeconnex.afficherDeconnex a {
+	display: block;
+}
+/* Jumbotron */
 .jumbotron 
 {
 	background-color: rgba(255, 255, 255, 0.5);
