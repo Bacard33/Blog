@@ -44,6 +44,7 @@ try {
             approveComment($_GET['id']);   
         }
         elseif($_GET['action'] == 'delComment') {
+            
             deleteComment($_GET['id']); 
         }
         elseif($_GET['action'] == 'newPost') {
@@ -51,14 +52,17 @@ try {
             newPost();   
         }
         elseif ($_GET['action'] == 'updatePost') {
-            
-            if(!empty($_GET['id']) && $_GET['id'] > 0) {
-                updatePost($_GET['id']);
+            if($_SESSION['admin']== 1) {
+                if(!empty($_GET['id']) && $_GET['id'] > 0) {
+                    updatePost($_GET['id']);
+                }
             }
         }
         elseif ($_GET['action'] == 'view_update') {
             
-                viewUpdatePost($_GET['id']); 
+            if($_SESSION['admin']== 1){
+                viewUpdatePost(); 
+            }
         
         }
         elseif ($_GET['action'] == 'deletePost') {
@@ -67,28 +71,30 @@ try {
                 
         } 
         elseif ($_GET['action'] == "admin") {
-
+            /*var_dump($_GET['action']); //ok
+            var_dump($pass, $mail); // null, null
+            var_dump($_POST['mail'], $_POST['password']); // ok*/
+            
             if(!empty($_POST['mail']) && !empty($_POST['password'])) {
-
                 $mail = htmlspecialchars(strtolower($_POST['mail']));
-                $password = htmlspecialchars($_POST['password']);
-                $passHash = htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT));
-                espaceAdmin($mail, $password);       
+                espaceAdmin($mail, $password);
+                /*if($_POST['mail'] == $mail && $pass == password_verify($mail, $pass)) {
+                    espaceAdmin($mail, $password);
+                }*/
             }
         }
         elseif($_GET['action'] == 'connexion') {
             
-            // Si le formulaire est vide => formulaire login
+            
             if ($_SESSION['admin']== 1){
                 require ('view/frontend/admin.php');
             } else {
                 loginAdmin();
             }        
         }
-        elseif($_GET['action'] == 'deconnexion') {
-            
+        elseif($_GET['action'] == 'deconnexion') {  
             $_SESSION['admin']= 0;
-            require ('view/frontend/homeView.php');      
+            listPosts();      
         }
     } else {
         listPosts();

@@ -24,25 +24,6 @@ class PostManager extends Manager
 
         return $post;
     }
-
-    //Affiche espace admin
-    public function espaceAdmin($mail, $password) 
-    {    
-        $pass = hash('md5', $_POST['password']);
-        $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM users WHERE mail = ?'); 
-        $req->execute(array($mail));
-        $userInfo = $req->fetch();
-        
-        if($pass = $userInfo['password']) {
-        
-            $_SESSION['admin']=1;
-        }else{ 
-            //Si les informations sont mauvaises / L'administrateur n'est pas connecté 
-            $_SESSION['admin']=0;
-        }
-    }
-
     //Récupère un chapitre à modifier
     public function updatePost($id) {
         $db = $this->dbConnect();
@@ -51,14 +32,14 @@ class PostManager extends Manager
         return $req;
     }
 
-    //Affiche un chapitre à modifier
+    //Valide/Affiche le chapitre modifié
     public function viewUpdatePost($id) {
-        
-        $db = $this->dbConnect();
-        $view_update= $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin\') AS creation_date_fr FROM posts WHERE id = ?');
-        $view_update->execute(array('title' => $_POST['title'], 'content' => $_POST ['mytextarea'], $_GET ['id']));
 
-        return $view_update;
+        $db = $this->dbConnect();
+        $req= $db->prepare('UPDATE posts SET title = :title, content = :content, update_date = NOW() WHERE id = :id');
+        $req->execute(array('title' => $_POST['title'], 'content' => $_POST ['mytextarea'], 'id' => $_GET ['id']));
+
+        return $req;
 
     }
     //Création d'un chapitre

@@ -22,31 +22,16 @@
                             </button>
                         </div>
                         <div class="collapse navbar-collapse">
-                            <div id="afficher">
-                                <div id="masquer">
-                                    
-                                            <ul class="nav navbar-nav">
-                                                <li><a href="#auteur"class="ancre">Accueil</a></li>
-                                                <li><a href="#publications" class="ancre">Chapitres</a></li>
-
-                                                <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li>
-                                                
-                                                <li id="adminDeconnex" class="afficherDeconnex"><a href="index.php?action=deconnexion">Déconnexion</a></li>
-                                            </ul>
-                                <script>
-                                    
-                                    var adminConnex = document.getElementById("li#adminConnex");
-                                    var adminDeconnex = document.getElementById("li#adminDeconnex");
-                                    adminConnex.className = "afficherConnex";
-                                    adminDeconnex.className = "afficherDeconnexh";
-
-                                    adminConnex.addEventListener('click', function () {
-                                        adminConnex.className = "afficherConnexh";
-                                        adminDeconnex.className = "afficherDeconnex";
-                                    });
-                                </script>       
-                                </div> 
-                            </div> 
+                            <ul class="nav navbar-nav">
+                                <li><a href="#auteur"class="ancre">Accueil</a></li>
+                                <li><a href="#publications" class="ancre">Chapitres</a></li>
+                                <?php if($_SESSION['admin'] != 1) {  ?>
+                                    <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
+                                    if($_SESSION['admin'] == 1) { ?>
+                                        <li id="adminDeconnex" class="afficherDeconnex"><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                                    <?php }
+                                    ?>
+                            </ul>         
                         </div>    
                     </nav>
                 
