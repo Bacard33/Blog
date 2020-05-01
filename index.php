@@ -1,7 +1,11 @@
 <?php
 session_start();
 
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try {
 
@@ -59,11 +63,8 @@ try {
             }
         }
         elseif ($_GET['action'] == 'view_update') {
+            viewUpdatePost();
             
-            if($_SESSION['admin']== 1){
-                viewUpdatePost(); 
-            }
-        
         }
         elseif ($_GET['action'] == 'deletePost') {
 
@@ -71,16 +72,10 @@ try {
                 
         } 
         elseif ($_GET['action'] == "admin") {
-            /*var_dump($_GET['action']); //ok
-            var_dump($pass, $mail); // null, null
-            var_dump($_POST['mail'], $_POST['password']); // ok*/
             
             if(!empty($_POST['mail']) && !empty($_POST['password'])) {
                 $mail = htmlspecialchars(strtolower($_POST['mail']));
                 espaceAdmin($mail, $password);
-                /*if($_POST['mail'] == $mail && $pass == password_verify($mail, $pass)) {
-                    espaceAdmin($mail, $password);
-                }*/
             }
         }
         elseif($_GET['action'] == 'connexion') {
@@ -101,6 +96,6 @@ try {
     }
 }
 catch(Exception $e) {
-    echo 'Erreur : ' . $e->getMessage();
-    //require('view/frontend/errorView.php');
+    $errorMessage = $e->getMessage();
+    require ('view/frontend/errorView.php');
 }
