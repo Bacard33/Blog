@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require('controller/frontend.php');
 require('controller/backend.php');
 
@@ -56,15 +53,19 @@ try {
             newPost();   
         }
         elseif ($_GET['action'] == 'updatePost') {
+
             if($_SESSION['admin']== 1) {
-                if(!empty($_GET['id']) && $_GET['id'] > 0) {
-                    updatePost($_GET['id']);
-                }
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    updatePost();
+                }      
             }
         }
         elseif ($_GET['action'] == 'view_update') {
-            viewUpdatePost();
-            
+            if($_SESSION['admin']== 1) {
+                if(!empty($_GET['id']) && $_GET['id'] > 0) {
+                    viewUpdatePost($_GET['id']);
+                }
+            }   
         }
         elseif ($_GET['action'] == 'deletePost') {
 
@@ -79,13 +80,11 @@ try {
             }
         }
         elseif($_GET['action'] == 'connexion') {
-            
-            
+             
             if ($_SESSION['admin']== 1){
                 require ('view/frontend/admin.php');
-            } else {
+            }
                 loginAdmin();
-            }        
         }
         elseif($_GET['action'] == 'deconnexion') {  
             $_SESSION['admin']= 0;

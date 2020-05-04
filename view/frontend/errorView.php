@@ -16,36 +16,35 @@
 
 <?php ob_start(); ?>
   
- 	<body>
+  <body>
     <div class="container-fluid">
-          <div class="jumbotron row" id="errorPage">
-            <h1>Billet simple pour l'Alaska</h1>
-            
-        
-    <div class="container">
-  <h2>Page d'erreur :</h2>
+        <div class="jumbotron row" id="errorPage">
+          <h1>Billet simple pour l'Alaska</h1>
+            <div class="container">
+
+              <h2>Page d'erreur :</h2>
+                <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Revenir à l'accueil</a></button>
   
   <!-- Modal -->
   <div class="modal-lg" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Erreur trouvée</h4>
+          <h4 class="modal-title">Erreur trouvée :</h4>
         </div>
         <div class="modal-header">
-          <p><?php echo 'Erreur : ' . $e->getMessage(); ?></p>
-        </div>
-        
+          <p><?php echo $errorMessage ?></p>
       </div>
     </div>
   </div>
-</div>
+  </div>
+    </div>
+      </div>
+          </div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>
-			</div>
-    </div>
-		
-	</body>
+      
+    
+  </body>
 </html>
