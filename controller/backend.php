@@ -9,26 +9,32 @@ require_once('model/UserManager.php');
 // Création d'un chapitre
 function newPost() {
     
-    $Manager = new p4_blog\model\PostManager();
-    $newPost = $Manager->newPost();
-
     require 'view/frontend/newPost.php';
+
+}
+function createNewPost($title, $content) {
+    
+    $Manager = new p4_blog\model\PostManager();
+    $createNewPost = $Manager->createNewPost($title, $content);
+    
+    require 'view/frontend/admin.php';
 
 }
 // Récupère un chapitre pour le modifier
 function updatePost($id) {
 
-    $Manager = new p4_blog\model\PostManager();
-    $update = $Manager->updatePost($id);
-
+    $postManager = new p4_blog\model\PostManager();
+    $updatePost = $postManager->updatePost($id);
+    
     require 'view/frontend/postUpdate.php';
 }
 // Valide/Affiche le chapitre modifié
 function viewUpdatePost($id) {
     
-    $Manager = new p4_blog\model\PostManager();
-    $view_update = $Manager->viewUpdatePost($id);
-    
+    $postManager = new p4_blog\model\PostManager();
+    $view_update = $postManager->view_update($id);
+    echo 'Chapitre bien modifié';
+
     require 'view/frontend/postUpdate.php';
 }
 

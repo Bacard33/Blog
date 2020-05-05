@@ -19,28 +19,22 @@
   <body>
     <div class="container-fluid">
         <div class="jumbotron row" id="errorPage">
-          <h1>Billet simple pour l'Alaska</h1>
+          <h1 class="text-center">Billet simple pour l'Alaska</h1>
             <div class="container">
 
-              <h2>Page d'erreur :</h2>
-                <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Revenir à l'accueil</a></button>
-  
-  <!-- Modal -->
-  <div class="modal-lg" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Erreur trouvée :</h4>
+              <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
+              </br>
+              </br>
+              <div class="fade-in">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <p><?php echo $errorMessage ?></p>
+                    </div>
+                  </div>
+              </div>
+            </div>
         </div>
-        <div class="modal-header">
-          <p><?php echo $errorMessage ?></p>
-      </div>
     </div>
-  </div>
-  </div>
-    </div>
-      </div>
-          </div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

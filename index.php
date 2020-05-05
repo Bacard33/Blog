@@ -52,11 +52,18 @@ try {
             
             newPost();   
         }
+        elseif($_GET['action'] == 'createNewPost') {
+            
+            if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                createNewPost($_POST['title'], $_POST['content']);             
+            }
+            $_SESSION['message'] == 1;
+        }
         elseif ($_GET['action'] == 'updatePost') {
 
             if($_SESSION['admin']== 1) {
-                if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    updatePost();
+                if (!empty($_GET['id']) && $_GET['id'] > 0) {
+                    updatePost($_GET['id']);
                 }      
             }
         }
@@ -83,8 +90,9 @@ try {
              
             if ($_SESSION['admin']== 1){
                 require ('view/frontend/admin.php');
-            }
+            }else{
                 loginAdmin();
+            }
         }
         elseif($_GET['action'] == 'deconnexion') {  
             $_SESSION['admin']= 0;

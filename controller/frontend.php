@@ -74,6 +74,6 @@ function espaceAdmin($mail, $password) {
         }else{ 
             //Si les informations sont mauvaises / L'administrateur n'est pas connecté 
             $_SESSION['admin']=0;
-            echo 'erreur connexion';
+            throw new Exception('Erreur de connexion : Veuillez vérifier vos identifiants.');
         }   
 }

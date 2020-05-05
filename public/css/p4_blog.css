@@ -26,25 +26,10 @@ img
 	font-size: 1.2em;
 	margin-left: 1em;
 }
-/* Connexion */
-li#adminConnex.afficherConnexh a {
-	display: none;
-}
-li#adminConnex.afficherConnex a {
-	display: block;
-}
-li#adminDeconnex.afficherDeconnexh a {
-	display: none;
-}
-li#adminDeconnex.afficherDeconnex a {
-	display: block;
-}
 /* Jumbotron */
 .jumbotron 
 {
 	background-color: rgba(255, 255, 255, 0.5);
-}
-.jumbotron p {
     font-size: 18px;
 }
 h1.carousel-caption {
@@ -69,10 +54,10 @@ button {
     border-radius: 0.5em;
 }
 button.no-signal a {
-    font-size: 0.8em; 
+    font-size: 1em; 
 }
 .signal {
-    font-size: 0.8em;
+    font-size: 1em;
     color: red;
     border: solid 1px #ccc;
     padding: 0.3em;
@@ -80,7 +65,7 @@ button.no-signal a {
     background-color: white;
 }
 .signal_ok {
-    font-size: 0.8em;
+    font-size: 1em;
     color: #337ab7    
 }
 i.fas.fa-thumbs-up {
@@ -98,7 +83,53 @@ i.fas.fa-trash-alt{
 	border: 5px solid black;
 	padding: 1em;
 }
-
+/* Message popup */
+.fade-in {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+}
 /*Gestion spécifique Taille du titre / écran < 400px */
 @media (max-width: 400px)
 {
