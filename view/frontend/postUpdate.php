@@ -1,9 +1,5 @@
 <?php  $title = "Modification d'un chapitre"; ?>
 
-<?php ob_start(); ?>
-
-<?php if(empty($_SESSION['name'])) {
-    session_start(); } ?>
 <!DOCTYPE html>
 <html lang="fr">
 <html>
@@ -24,24 +20,47 @@
         </script>
     </head>
 
-<body>
+    <?php ob_start(); ?>
+
   <body>
     <div class="container-fluid">
-      <div class="jumbotron row" id="updatePost">
+        <div class="jumbotron row" id="updatePost">
         
-        <h1>Billet simple pour l'Alaska</h1>
-        <h2>Modifier un chapitre</h2>
-        <button type="submit" class="btn btn-default">Enregister</button>
-        <button type="submit" class="btn btn-default">Mettre en ligne</button>
-        <button type="submit" class="btn btn-default">Supprimer</button>
-        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Revenir à l'accueil</a></button>
+        
+                <h1>Billet simple pour l'Alaska</h1>
+                <h2>Modifier un chapitre</h2>
+                <?php
+                while ($data = $posts->fetch())
+                {
+                ?>
+                
+                <form action="index.php?id=<?php $data['id'];?>&action=view_update" method="post">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" name="submit" value="Modifier">
+                        <a href="index.php?id=<?php $data['id'];?>&action=deletePost" class="btn btn-danger" role="button">Supprimer</a>
+                        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="title">Titre du chapitre</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Titre du chapitre" value="<?php echo $data['title']; ?>" required>
+                    </div>
 
-        <textarea name="postText" id="mytextarea"></textarea>    
+                    <div class="form-group">
+                        <label for="postContent">Contenu du chapitre</label>
+                        <textarea id="mytextarea" name="content" rows="15"><?php echo $data['content']; ?></textarea>   
+                    </div>
+                </form>
+        </div>
+                <?php
+                    }
+                    $posts->closeCursor();
+                    ?>
+    </div>
 
 </body>
-      </div>
-    </div>
+      
 </html>
 
-<?php $content = ob_get_clean(); ?>
+<?php  $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

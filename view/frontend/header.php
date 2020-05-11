@@ -23,8 +23,8 @@
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="#auteur"class="ancre">Accueil</a></li>
-                                <li><a href="#publications" class="ancre">Chapitres</a></li>
+                                <li><a href="index.php"class="ancre">Accueil</a></li>
+                                <li><a href="index.php" class="ancre">Chapitres</a></li>
                                 <?php if($_SESSION['admin'] != 1) {  ?>
                                     <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
                                     if($_SESSION['admin'] == 1) { ?>

@@ -21,29 +21,29 @@ function createNewPost($title, $content) {
 
 }
 // Récupère un chapitre pour le modifier
-function updatePost($id) {
+function updatePost() {
 
     $postManager = new p4_blog\model\PostManager();
-    $updatePost = $postManager->updatePost($id);
+    $posts = $postManager->getPosts();
     
     require 'view/frontend/postUpdate.php';
 }
-// Valide/Affiche le chapitre modifié
-function viewUpdatePost($id) {
+// Affiche le chapitre modifié
+function viewUpdatePost($title, $content) {
     
     $postManager = new p4_blog\model\PostManager();
-    $view_update = $postManager->view_update($id);
-    echo 'Chapitre bien modifié';
+    $view_update = $Manager->view_update($title, $content);
 
-    require 'view/frontend/postUpdate.php';
+    require 'view/frontend/admin.php';
 }
 
 // Supprime un chapitre
-function deletePost($id) {
+function deletePost($title, $content) {
+
     $postManager = new p4_blog\model\PostManager();
-    $deletePost = $postManager->deletePost($id);
+    $deletePost = $Manager->deletePost($title, $content);
     
-    require 'view/frontend/postUpdate.php';
+    require 'view/frontend/admin.php';
 }
 
 // Affiche la liste des commentaires signalés

@@ -23,7 +23,20 @@
                 
                     <h2 class="text-center">Espace Administration</h2>   
                         <h3 class="text-center">Bienvenue Mr Forteroche, vous êtes maintenant connecté à votre espace d'administration</h3>
+                        <?php if(!empty($_POST['submit'])) { ?>
+                            <div class="modal-content">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="fade-in">
+                                        <h2>Votre nouveau chapitre a bien été ajouté</h2>   
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        } if(empty($_POST['submit'])) { ?>
+                            <!---- Aucun message ---->
+                        <?php }
 
+                        ?> 
                         <div class="container">
                             <h2>Que souhaitez-vous faire ?</h2>
                             <div class="list-group">

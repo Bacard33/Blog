@@ -14,6 +14,7 @@ class PostManager extends Manager
 
         return $req;
     }
+
     //Récupère un chapitre
     public function getPost($postId)
     {
@@ -24,40 +25,32 @@ class PostManager extends Manager
 
         return $post;
     }
-    //Récupère un chapitre à modifier
-    public function updatePost($id) {
+
+    //Modification d'un chapitre
+    public function viewUpdatePost($title, $content) {
+        
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM posts WHERE id = ?');
-        $req->execute(array($id));
+        $req= $db->prepare('UPDATE posts SET title = ?, content = ?, update_date = NOW() WHERE id = ?');
+        $req->execute(array($title, $content)) or die (print_r($req->errorInfo()));
+
         return $req;
     }
-
-    //Valide/Affiche le chapitre modifié
-    public function viewUpdatePost($id) {
-
-        $db = $this->dbConnect();
-        $req= $db->prepare('UPDATE posts SET title = :title, content = :content, update_date = NOW() WHERE id = :id');
-        $req->execute(array('title' => $_POST['title'], 'content' => $_POST ['mytextarea'], 'id' => $_GET ['id']));
-
-        return $req;
-
-    }
+    
     //Création d'un chapitre
-    public function newPost() {
+    public function createNewPost($title, $content) {
         $bd = $this->dbConnect();
-        $req = $bd->prepare('INSERT INTO posts (author, title, content, creation_date, update_date) VALUES ("Jean Forteroche", :title, :content, NOW(), NOW())');
-        $req->execute(array('title' => $_POST['title'], 'content' => $_POST['mytextarea']));
-
+        $req = $bd->prepare('INSERT INTO posts(author, title, content, nbcomment, creation_date, update_date) VALUES ("Jean Forteroche", ?, ?, "0", NOW(), NOW())');
+        $req->execute(array($title, $content)) or die (print_r($req->errorInfo()));
+        
         return $req;
     }
-
     //Suppression du chapitre
-    public function deletePost($id) {    
+    public function deletePost($title, $content) {    
         $db = $this->dbConnect();
         $req = $db->prepare('DELETE FROM posts WHERE id = ?');
-        $deleteArticle = $req->execute(array($id));
+        $req->execute(array($title, $content)) or die (print_r($req->errorInfo()));
 
-        return $deleteArticle;
+        return $req;
     }
 
 }

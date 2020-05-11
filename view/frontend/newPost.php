@@ -19,11 +19,11 @@
             <div class="jumbotron row">
                <h1>Billet simple pour l'Alaska</h1>
                <h2>Créer un chapitre</h2>
+               
                <form action="index.php?action=createNewPost" method="post">
                <div class="form-group">
                   <input type="submit" class="btn btn-primary" name="submit" value="Publier">
-                  <button type="submit" class="btn btn-default"><a href="index.php?id=<?php $datas['id'];?>&action=deleteArticle">Supprimer</a></button>
-                  <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Revenir à l'accueil</a></button>
+                  <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
                </div>
                         
                   <script>
@@ -41,7 +41,7 @@
             </div>
 
             <input type="submit" class="btn btn-primary" name="submit" value="Publier">
-            <button type="submit" class="btn btn-default"><a href="index.php?id=<?php $datas['id'];?>&action=deleteArticle">Supprimer</a></button>
+            
          </form>
 
             </div>

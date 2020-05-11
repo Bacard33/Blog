@@ -55,29 +55,27 @@ try {
         elseif($_GET['action'] == 'createNewPost') {
             
             if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                createNewPost($_POST['title'], $_POST['content']);             
-            }
-            $_SESSION['message'] == 1;
+                createNewPost($_POST['title'], $_POST['content']);
+            }           
         }
         elseif ($_GET['action'] == 'updatePost') {
-
-            if($_SESSION['admin']== 1) {
-                if (!empty($_GET['id']) && $_GET['id'] > 0) {
-                    updatePost($_GET['id']);
-                }      
+            
+            if($_SESSION['admin']== 1) {  
+                
+                    updatePost();
             }
         }
         elseif ($_GET['action'] == 'view_update') {
+            
             if($_SESSION['admin']== 1) {
-                if(!empty($_GET['id']) && $_GET['id'] > 0) {
-                    viewUpdatePost($_GET['id']);
+                if(!empty($_POST['title']) && !empty($_POST['content'])) {
+                    viewUpdatePost($_POST['title'], $_POST['content']);
                 }
             }   
         }
         elseif ($_GET['action'] == 'deletePost') {
-
-            deletePost($_GET['id']);
-                
+            
+            deletePost($_POST['title'], $_POST['content']);
         } 
         elseif ($_GET['action'] == "admin") {
             
