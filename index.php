@@ -63,19 +63,32 @@ try {
             if($_SESSION['admin']== 1) {  
                 
                     updatePost();
+            
             }
         }
         elseif ($_GET['action'] == 'view_update') {
-            
+
             if($_SESSION['admin']== 1) {
-                if(!empty($_POST['title']) && !empty($_POST['content'])) {
-                    viewUpdatePost($_POST['title'], $_POST['content']);
+                if(isset($_GET['id']) && $_GET['id'] > 0) {
+                    
+                    viewUpdatePost();
                 }
-            }   
+            }  
+        }
+        elseif ($_GET['action'] == 'confirmUpdatePost') {
+
+            if($_SESSION['admin']== 1) {
+                
+                if (!empty($_POST['title']) && !empty($_POST['content']) && isset($_GET['id'])) {
+                    confirmUpdatePost($_POST['title'], $_POST['content'], $_GET['id']);
+                }
+            }  
         }
         elseif ($_GET['action'] == 'deletePost') {
-            
-            deletePost($_POST['title'], $_POST['content']);
+
+            if($_SESSION['admin']== 1) { 
+                deletePost($_GET['id']);
+            }
         } 
         elseif ($_GET['action'] == "admin") {
             
@@ -93,6 +106,7 @@ try {
             }
         }
         elseif($_GET['action'] == 'deconnexion') {  
+            
             $_SESSION['admin']= 0;
             listPosts();      
         }

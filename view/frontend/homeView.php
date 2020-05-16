@@ -141,7 +141,7 @@ $posts->closeCursor();
             <?php ob_start(); ?>
 
 
-<?php   $footer = ob_get_clean(); ?>
+
             <!-- jQuery -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <!-- Javascript de Bootstrap -->
@@ -166,5 +166,5 @@ $posts->closeCursor();
         </body>
 
 </html>
-
+<?php  $footer = ob_get_clean(); ?>
 <?php require('template.php'); ?>

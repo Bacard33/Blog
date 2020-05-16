@@ -23,11 +23,39 @@
                 
                     <h2 class="text-center">Espace Administration</h2>   
                         <h3 class="text-center">Bienvenue Mr Forteroche, vous êtes maintenant connecté à votre espace d'administration</h3>
-                        <?php if(!empty($_POST['submit'])) { ?>
+                        <?php if(!empty($_POST['submit'] == "Publier")) { ?>
                             <div class="modal-content">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="fade-in">
                                         <h2>Votre nouveau chapitre a bien été ajouté</h2>   
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        } if(empty($_POST['submit'])) { ?>
+                            <!---- Aucun message ---->
+                        <?php }
+
+                        ?> 
+                        <?php if(!empty($_POST['submit'] == "Modifier")) { ?>
+                            <div class="modal-content">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="fade-in">
+                                        <h2>Votre chapitre a bien été modifié</h2>   
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        } if(empty($_POST['submit'])) { ?>
+                            <!---- Aucun message ---->
+                        <?php }
+
+                        ?> 
+                        <?php if(!empty($_POST['submit'] == "Supprimer")) { ?>
+                            <div class="modal-content">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="fade-in">
+                                        <h2>Votre chapitre a bien été supprimé</h2>   
                                     </div>
                                 </div>
                             </div>

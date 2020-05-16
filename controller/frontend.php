@@ -41,7 +41,7 @@ function addComment($postId, $pseudo, $comment)
     else {
 
         $Manager = new p4_blog\model\PostManager();
-        $update = $Manager->updatePost($id, $postId);
+        $update = $postManager->updatePost($id, $postId);
         header('Location: index.php?action=post&id=' . $postId);
     }
 }

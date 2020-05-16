@@ -74,7 +74,7 @@
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
             
-            <a class="page-footer ancre2" href="#auteur">Accueil/</a><a href="#publications" class="ancre2">Chapitres/</a><a href="index.php?action=connexion" >Connexion</a>
+            <a class="page-footer ancre2" href="#auteur">Accueil/</a><a href="#publications" class="ancre2">Chapitres/</a><a href="index.php?action=connexion" >Administration</a>
         </p>
         <p>
             <a class="dark-grey-text" href="#">Mentions Légales</a>
@@ -117,7 +117,7 @@
 </div>
 </footer>
 <!-- Footer -->
-<?php  echo $footer = ob_get_clean(); ?>
+
 <script>
                   
                   // Scroll fluide footer menu
@@ -134,3 +134,4 @@
                   });
             </script>
 </html>
+<?php  echo $footer = ob_get_clean(); ?>

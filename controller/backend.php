@@ -20,28 +20,35 @@ function createNewPost($title, $content) {
     require 'view/frontend/admin.php';
 
 }
-// Récupère un chapitre pour le modifier
+// Récupère la liste des chapitres
 function updatePost() {
-
+    
     $postManager = new p4_blog\model\PostManager();
-    $posts = $postManager->getPosts();
+    $posts = $postManager->getAllPosts();
     
     require 'view/frontend/postUpdate.php';
 }
-// Affiche le chapitre modifié
-function viewUpdatePost($title, $content) {
+// Affiche le chapitre à modifier
+function viewUpdatePost() {
     
     $postManager = new p4_blog\model\PostManager();
-    $view_update = $Manager->view_update($title, $content);
+    $post = $postManager->getPost($_GET['id']);
+
+    require 'view/frontend/viewPostUpdate.php';
+}
+//Validation du chapitre modifié
+function confirmUpdatePost($title, $content) {
+    
+    $postManager = new p4_blog\model\PostManager();
+    $post = $postManager->confirmUpdatePost($title, $content, $_GET['id']);
 
     require 'view/frontend/admin.php';
 }
-
 // Supprime un chapitre
-function deletePost($title, $content) {
-
+function deletePost() {
+    
     $postManager = new p4_blog\model\PostManager();
-    $deletePost = $Manager->deletePost($title, $content);
+    $deletePost = $postManager->deletePost($_GET['id']);
     
     require 'view/frontend/admin.php';
 }

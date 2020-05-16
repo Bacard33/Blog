@@ -130,6 +130,11 @@ i.fas.fa-trash-alt{
   100% {
     opacity:1;
 }
+/* Tableau affichage des chapitres */
+table {
+  border: 1px solid black!important;
+
+}
 /*Gestion spécifique Taille du titre / écran < 400px */
 @media (max-width: 400px)
 {
