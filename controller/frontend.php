@@ -25,23 +25,27 @@ function post()
     
     require('view/frontend/postView.php');
 }
- 
+// Incrémentation du nombre de commentaires
+function UpdatePostNbCom($id) {
+
+    $postManager = new p4_blog\model\PostManager();
+    $post = $postManager->UpdatePostNbCom($id);
+
+    require('view/frontend/postView.php');
+}
 // Ajoute un commentaire au chapitre
-function addComment($postId, $pseudo, $comment)
+function addComment($postId, $pseudo, $comment, $nbcomment)
 {
-
     $commentManager = new p4_blog\model\CommentManager();
-    
-    $affectedLines = $commentManager->postComment($postId, $pseudo, $comment);
-
+    $affectedLines = $commentManager->postComment($postId, $pseudo, $comment, $nbcomment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
 
-        $Manager = new p4_blog\model\PostManager();
-        $update = $postManager->updatePost($id, $postId);
+        $Manager = new p4_blog\model\CommentManager();
+        $update = $postManager->UpdatePostNbCom($postId, $nbcomment);
         header('Location: index.php?action=post&id=' . $postId);
     }
 }

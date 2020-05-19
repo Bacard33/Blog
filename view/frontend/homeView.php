@@ -120,7 +120,7 @@ while ($data = $posts->fetch())
     <div class="last_news">
         <h3>
             <?php echo htmlspecialchars($data['title']) ?>
-            <em> posté le <?php echo $data['creation_date_fr'] ?></em>   <i class="far fa-comment-alt"></i><?php echo $data['nbcomment']; ?>
+            <em> posté le <?php echo $data['creation_date_fr'] ?></em>   <i class="far fa-comment-alt"><?php echo $post['nbcomment']; ?>commentaires</i>
     
         </h3>
         
@@ -150,7 +150,7 @@ $posts->closeCursor();
             
             <script>
                   // Scroll fluide menu top
-                  $(function () {
+                  /*$(function () {
                         $('.ancre').on('click', function(e) {
                               e.preventDefault();
                               var hash = this.hash;
@@ -160,7 +160,7 @@ $posts->closeCursor();
                                     window.location.hash = hash;
                               });
                         });
-                  });
+                  });*/
             </script>
         
         </body>

@@ -28,7 +28,7 @@
               <div class="fade-in">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <p><?php echo $errorMessage ?></p>
+                      <p class="text-center"><?php echo $errorMessage ?></p>
                     </div>
                   </div>
               </div>

@@ -20,7 +20,7 @@ class PostManager extends Manager
     {
         
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin\') AS creation_date_fr FROM posts WHERE id = ?');
+        $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin\') AS creation_date_fr FROM posts WHERE id = ?');
         $req->execute(array($postId));
         $post = $req->fetch();
 
@@ -34,11 +34,11 @@ class PostManager extends Manager
         return $req;
     }
     //Modification d'un chapitre
-    public function confirmUpdatePost($title, $content, $postId) {
+    public function confirmUpdatePost($title, $content, $id) {
         
         $db = $this->dbConnect();
-        $req= $db->prepare('UPDATE posts SET title = ?, content = ?, update_date = NOW() WHERE id = ?') or trigger_error($db->error . "[$req]");
-        $req->execute(array($title, $content, $postId)) or die (print_r($req->errorInfo()));
+        $req= $db->prepare('UPDATE posts SET title = ?, content = ?, update_date = NOW() WHERE id = ?');
+        $req->execute(array($title, $content, $id)) or die (print_r($req->errorInfo()));
 
         return $req;
     }
@@ -53,7 +53,7 @@ class PostManager extends Manager
     }
     //Suppression du chapitre
     public function deletePost() { 
-         
+        
         $db = $this->dbConnect();
         $deletePost = $db->prepare('DELETE FROM posts WHERE id = ?');
         $deletePost->execute(array($_GET['id'])) or die (print_r($deletePost->errorInfo()));

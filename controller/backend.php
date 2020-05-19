@@ -37,8 +37,8 @@ function viewUpdatePost() {
     require 'view/frontend/viewPostUpdate.php';
 }
 //Validation du chapitre modifié
-function confirmUpdatePost($title, $content) {
-    
+function confirmUpdatePost($title, $content, $id) {
+
     $postManager = new p4_blog\model\PostManager();
     $post = $postManager->confirmUpdatePost($title, $content, $_GET['id']);
 

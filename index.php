@@ -19,10 +19,11 @@ try {
             }
         }
         elseif ($_GET['action'] == 'addComment') {
-
+            //var_dump($_GET['id'], $_POST['pseudo'], $_POST['comment'], $_GET['nbcomment']);
+            //die();
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['pseudo']) && !empty($_POST['comment'])) {
-                    addComment($_GET['id'], $_POST['pseudo'], $_POST['comment']);
+                    addComment($_GET['id'], $_POST['pseudo'], $_POST['comment'], $_GET['nbcomment']);
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis ! ');
@@ -61,8 +62,8 @@ try {
         elseif ($_GET['action'] == 'updatePost') {
             
             if($_SESSION['admin']== 1) {  
-                
-                    updatePost();
+
+                updatePost();
             
             }
         }
@@ -86,7 +87,8 @@ try {
         }
         elseif ($_GET['action'] == 'deletePost') {
 
-            if($_SESSION['admin']== 1) { 
+            if($_SESSION['admin']== 1) {
+                
                 deletePost($_GET['id']);
             }
         } 

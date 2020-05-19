@@ -9,10 +9,11 @@ class CommentManager extends Manager
     //Récupère les commentaires d'un article
     public function getComments($postId)
     {
+
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT id, pseudo, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr, reported_comment FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
         $comments->execute(array($postId));
-
+        
         return $comments;
     }
     
@@ -22,9 +23,8 @@ class CommentManager extends Manager
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, pseudo, comment, comment_date, reported_comment) VALUES(?, ?, ?, NOW(), "n")');
         $affectedLines = $comments->execute(array($postId, $pseudo, $comment));
-        /*$req = $db->prepare('UPDATE posts SET nbcomment = +1 WHERE id = ?'); 
-        $req->execute(array($title, $content));
-        return $affectedLines;*/
+    
+        return $affectedLines;
     }
 
     //Récupère un commentaire 
@@ -34,9 +34,18 @@ class CommentManager extends Manager
         $req = $db->prepare('SELECT id, pseudo, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE id = ?');
         $req->execute(array($id));
         $comment = $req->fetch();
+
         return $comment;
     }
+    //Mise à jour incrémentation du nbre de commentaires
+    public function updatePostNbCom($id, $nbcomment) {
+        $nbcomment= $nbcomment++;
+        $db = $this->dbConnect();
+        $req= $db->prepare('UPDATE posts SET nbcomment = ? WHERE id = ?');
+        $req->execute(array($id, $nbcomment));
 
+        return $req;
+    }
     //Signalement d'un commentaire
     public function reportedComment($id)
     {
@@ -56,6 +65,7 @@ class CommentManager extends Manager
 
         return $listcomments;
     }
+
     //Signalement du commentaire approuvé
     public function approveComment($id)
     {

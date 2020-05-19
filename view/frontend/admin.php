@@ -51,7 +51,7 @@
                         <?php }
 
                         ?> 
-                        <?php if(!empty($_POST['submit'] == "Supprimer")) { ?>
+                        <?php if(!empty($_POST['submit']  == "Supprimer")) { ?>
                             <div class="modal-content">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="fade-in">

@@ -25,9 +25,8 @@
         
     
         <h2>Voici ici la liste des commentaires signalés :</h2> 
-        <button type="submit" class="btn btn-default">Enregister</button>
-        <button type="submit" class="btn btn-default">Mettre en ligne</button>
-        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Revenir à l'accueil</a></button>          
+        
+        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>          
     
         <table class="table table-hover"> 
         

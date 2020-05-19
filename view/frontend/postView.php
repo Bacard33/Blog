@@ -21,7 +21,7 @@
             <div class="news">
                <h3>
                   <?php echo htmlspecialchars($post['title']) ?>
-                  <em> posté le <?php echo $post['creation_date_fr'] ?></em>  <i class="far fa-comment-alt"></i><?php echo $data['nbcomment']; ?>
+                  <em> posté le <?php echo $post['creation_date_fr'] ?></em>  <i class="far fa-comment-alt"><?php echo $post['nbcomment'] ?>commentaires</i>
                </h3>
                <p>
                   <?php echo nl2br(htmlspecialchars($post['content'])) ?>
@@ -30,7 +30,7 @@
          </div>
          <div class="jumbotron" id="contact">
             <h2 class="text-left">Vos avis et commentaires</h2>
-            <form action="index.php?action=addComment&amp;id=<?php echo $post['id'] ?>" method="post">
+            <form action="index.php?action=addComment&amp;id=<?php echo $post['id'] ?>&amp;nbcom=<?php echo $post['nbcomment']; ?>" method="post">
                <div class="form-group col-md-4">
                   <label for="author">Pseudo</label><br />
                   <input type="text" class="form-control" placeholder="Votre pseudo" id="pseudo" name="pseudo">
