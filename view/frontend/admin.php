@@ -21,8 +21,8 @@
         <div class="container-fluid">
             <div class="jumbotron row" id="administration">
                 
-                    <h2 class="text-center">Espace Administration</h2>   
-                        <h3 class="text-center">Bienvenue Mr Forteroche, vous êtes maintenant connecté à votre espace d'administration</h3>
+                <h2 class="text-center">Espace Administration</h2>   
+                    <h3 class="text-center">Bienvenue Mr Forteroche, vous êtes maintenant connecté à votre espace d'administration</h3>
                         <?php if(!empty($_POST['submit'] == "Publier")) { ?>
                             <div class="modal-content">
                                 <div class="modal-dialog modal-dialog-centered">
@@ -31,8 +31,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                        } if(empty($_POST['submit'])) { ?>
+                        <?php
+                            } if(empty($_POST['submit'])) { ?>
                             <!---- Aucun message ---->
                         <?php }
 
@@ -69,18 +69,17 @@
                             <h2>Que souhaitez-vous faire ?</h2>
                             <div class="list-group">
                                 <a href="index.php?action=newPost" class="list-group-item">Créer un nouveau chapitre</a>
-                                <a href="index.php?id=<?php $data['id'];?>&action=updatePost" class="list-group-item">Modifier un chapitre</a>
+                                <a href="index.php?id=<?php $data['id'];?>&action=updatePost" class="list-group-item">Lire, Modifier ou Supprimer un chapitre</a>
                                 <a href="index.php?action=listReportedComment" class="list-group-item">Consulter la liste des commentaires signalés</a>
                             </div>
                             <button type="submit" class="btn btn-default"><a href="index.php?action=deconnexion">Se déconnecter</a></button>
                         </div>
-                </div>
             </div>
         </div>
 
 
 <?php  $content = ob_get_clean(); ?>
-</body>
+    </body>
 </html>
 
 <?php require('template.php'); ?>

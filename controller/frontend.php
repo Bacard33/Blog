@@ -25,27 +25,34 @@ function post()
     
     require('view/frontend/postView.php');
 }
-// Incrémentation du nombre de commentaires
-function UpdatePostNbCom($id) {
 
+// Incrémentation du nombre de commentaires
+/*function updatePostNbCom($id, $nbcomment) {
+    var_dump($id, $nbcomment);
+    die();
     $postManager = new p4_blog\model\PostManager();
-    $post = $postManager->UpdatePostNbCom($id);
+    $post = $postManager->UpdatePostNbCom($id, $nbcomment);
 
     require('view/frontend/postView.php');
-}
-// Ajoute un commentaire au chapitre
-function addComment($postId, $pseudo, $comment, $nbcomment)
+}*/
+
+// Ajoute un commentaire au chapitre 
+function addComment($postId, $pseudo, $comment)
 {
+    //var_dump($postId, $pseudo, $comment);
+    //die();
+    $postManager = new p4_blog\model\PostManager();
     $commentManager = new p4_blog\model\CommentManager();
-    $affectedLines = $commentManager->postComment($postId, $pseudo, $comment, $nbcomment);
+    //var_dump($_GET['id'], $_POST['nbcomment']);
+    //die();
+    $post = $postManager->updatePostNbCom($_GET['id'], $_POST['nbcomment']);
+    $comments = $commentManager->postComment($postId, $pseudo, $comment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
 
-        $Manager = new p4_blog\model\CommentManager();
-        $update = $postManager->UpdatePostNbCom($postId, $nbcomment);
         header('Location: index.php?action=post&id=' . $postId);
     }
 }

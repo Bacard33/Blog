@@ -41,20 +41,11 @@
                                        <textarea id="mytextarea" name="content" rows="15"><?php echo $post['content']?></textarea>
                                  </div>  
                      </form>
-               
-                  <div class="form-group">
-                     <a href="index.php?action=deletePost&amp;id=<?php echo $post['id']; ?>"><button type="submit" class="btn btn-danger" onclick="afficher()">Supprimer</button></a>
-                     <script type="text/javascript">
-                        function afficher() {
-                           var msg= "Votre chapitre a bien été supprimé";
-                        }
-                     
-                     </script>
-                  </div>
-               
-            
-
-            </div>
+                     <form action="index.php?action=deletePost&amp;id=<?php echo $post['id'] ?>" method="post">
+                        <div class="form-group">
+                           <input type="submit" class="btn btn-danger" name="submit" value="Supprimer">
+                        </div>
+                     </form>   
             </div>
          </div>
       </body>

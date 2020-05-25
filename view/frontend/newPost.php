@@ -18,37 +18,34 @@
          <div class="container-fluid">
             <div class="jumbotron row">
                <h1>Billet simple pour l'Alaska</h1>
-               <h2>Créer un chapitre</h2>
+                  <h2>Créer un chapitre</h2>
                
-               <form action="index.php?action=createNewPost" method="post">
-               <div class="form-group">
-                  <input type="submit" class="btn btn-primary" name="submit" value="Publier">
-                  <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
-               </div>
-                        
-                  <script>
-                     tinymce.init({
-                     selector: '#mytextarea'
-                  });
-                  </script>
-            <div class="form-group">
-               <label for="title">Titre</label>
-               <input type="text" class="form-control" id="title" name="title" placeholder="Titre du chapitre"  required>
-            </div>
-            <div class="form-group">
-               <label for="postContent">Contenu du chapitre</label>
-               <textarea id="mytextarea" name="content" rows="15"></textarea>
-            </div>
+                     <form action="index.php?action=createNewPost" method="post">
+                        <div class="form-group">
+                           <input type="submit" class="btn btn-primary" name="submit" value="Publier">
+                              <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
+                        </div>
+                           
+                           <script>
+                              tinymce.init({
+                              selector: '#mytextarea'
+                              });
+                           </script>
 
-            <input type="submit" class="btn btn-primary" name="submit" value="Publier">
-            
-         </form>
-
-            </div>
+                           <div class="form-group">
+                              <label for="title">Titre</label>
+                                 <input type="text" class="form-control" id="title" name="title" placeholder="Titre du chapitre"  required>
+                           </div>
+                              <div class="form-group">
+                                 <label for="postContent">Contenu du chapitre</label>
+                                    <textarea id="mytextarea" name="content" rows="15"></textarea>
+                              </div>
+                                 <input type="submit" class="btn btn-primary" name="submit" value="Publier"> 
+                     </form>
             </div>
          </div>
       </body>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    </html>
    
    <?php $content = ob_get_clean(); ?>

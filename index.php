@@ -19,11 +19,12 @@ try {
             }
         }
         elseif ($_GET['action'] == 'addComment') {
-            //var_dump($_GET['id'], $_POST['pseudo'], $_POST['comment'], $_GET['nbcomment']);
+            //var_dump($_GET['id'], $_POST['pseudo'], $_POST['comment']);
             //die();
+            
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['pseudo']) && !empty($_POST['comment'])) {
-                    addComment($_GET['id'], $_POST['pseudo'], $_POST['comment'], $_GET['nbcomment']);
+                    addComment($_GET['id'], $_POST['pseudo'], $_POST['comment']);
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis ! ');

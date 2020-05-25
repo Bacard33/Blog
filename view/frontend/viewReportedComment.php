@@ -16,51 +16,41 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <link rel="stylesheet" href="public/css/p4_blog.css">
     </head>
-    
-  
-  <body>
-    <div class="container-fluid">
-      <div class="jumbotron row" id="reportedPost">
-        <h1>Billet simple pour l'Alaska</h1>
-        
-    
-        <h2>Voici ici la liste des commentaires signalés :</h2> 
-        
-        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>          
-    
-        <table class="table table-hover"> 
-        
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Date du commentaire</th>
-                    <th>Commentaire</th>
-                    <th>Accepter le commentaire</th>
-                    <th>Supprimer le commentaire</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($datas = $s_comments->fetch()) {
-
-                        if ($datas ['reported_comment'] == "o") { ?>
-                            <tr>
-                                <td><?php echo $datas['pseudo']; ?></td>
-                                <td>le <?php echo $datas['comment_date']; ?></td>
-                                <td><?php echo $datas['comment'];?></td>
-                                <td><a href="index.php?action=okComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-thumbs-up"></i></a>
-                                <td><a href="index.php?action=delComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-trash-alt"></i></a>   
-                            </tr>
-                        <?php
-                        } 
-                    } ?>
-
-                
-            </tbody>
-        </table>
-          
+      
+    <body>
+        <div class="container">    
+            <div class="row-fluid">
+                <h1>Billet simple pour l'Alaska</h1>
+                    <h2>Voici ici la liste des commentaires signalés :</h2> 
+                        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>          
+                            <table class="table table-hover"> 
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Date du commentaire</th>
+                                        <th>Commentaire</th>
+                                        <th>Accepter le commentaire</th>
+                                        <th>Supprimer le commentaire</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($datas = $s_comments->fetch()) {
+                                        if ($datas ['reported_comment'] == "o") { ?>
+                                            <tr>
+                                                <td><?php echo $datas['pseudo']; ?></td>
+                                                <td>le <?php echo $datas['comment_date']; ?></td>
+                                                <td><?php echo $datas['comment'];?></td>
+                                                <td><a href="index.php?action=okComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-thumbs-up"></i></a></td>
+                                                <td><a href="index.php?action=delComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>   
+                                            </tr>
+                                    <?php
+                                    } 
+                                    } ?>
+                                </tbody>
+                            </table>  
+            </div>
         </div>
-</body>
-</div>
+    </body>
 </html>
 
 <?php  $content = ob_get_clean(); ?>

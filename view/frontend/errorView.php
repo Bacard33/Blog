@@ -21,17 +21,18 @@
         <div class="jumbotron row" id="errorPage">
           <h1 class="text-center">Billet simple pour l'Alaska</h1>
             <div class="container">
-
-              <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
-              </br>
-              </br>
-              <div class="fade-in">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <p class="text-center"><?php echo $errorMessage ?></p>
-                    </div>
-                  </div>
-              </div>
+              
+                <?php if(!empty($_POST['mail']) && !empty($_POST['password'])) { ?>
+                        <button id="retour_login" class="btn btn-default"><a href="index.php?action=connexion">Retour</a></button><?php } ?>
+                          <div class="fade-in">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <p class="text-center"><?php echo $errorMessage ?></p>
+                              </div>
+                            </div>
+                          </div>
+                <?php if(empty($_POST['mail']) && empty($_POST['password'])) { ?>
+                  <button id="retour_accueil" class="btn btn-default"><a href="index.php?action=listPosts">Retour</a></button><?php } ?>     
             </div>
         </div>
     </div>

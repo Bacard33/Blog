@@ -23,29 +23,24 @@
                     -moz-background-size: cover;
                     background-size: cover;
                     -o-background-size: cover;
+                    margin-top: 50px;
                 }
-            </style>
-            
-            </head>
+            </style>   
+        </head>
 
-        <body id="page-top" data-spy="scroll" data-target=".navbar">
-            
-
-                
-            <div class="container-fluid">
-                
+        <body id="page-top" data-spy="scroll" data-target=".navbar">    
+            <div class="container-fluid">    
                 <header>
-
                     <!--Navigation
                     ==================================================--> 
                     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">          
                         <div class="navbar-header">
                             <a class="navbar-brand" href="#page-top">Billet simple pour l'Alaska</a>
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
@@ -60,9 +55,7 @@
                             </ul>                        
                         </div>    
                     </nav>
-
                 </header>
-
                 <!-- Caroussel
                 ==================================================--> 
                 <div class="row">   
@@ -96,51 +89,38 @@
                     </div>
                 </div>
             </div>
-
                 <!-- Corps de page déjà codé
                 ==================================================--> 
                 <div class="container">
-
-                      <div class="jumbotron row" id="auteur">
-                            <h2 class="text-center">Bienvenue dans mon blog</h2>
+                    <div class="jumbotron row" id="auteur">
+                        <h2 class="text-center">Bienvenue dans mon blog</h2>
                             <img class="col-sm-12 col-md-5" src="public/img/jeanF.jpg" alt="Accueil">     
-                            <p class="col-sm-12 col-md-7" id="mot_auteur">Avec ce blog, j'espère créer une vraie proximité inédite avec vous. L'écriture est souvent un travail solitaire, c'est pourquoi l'envie de faire partager l'écriture de mon nouveau roman me ravi. Je publierai au fil du temps mes chapitres et vous pourrez me donner votre sentiment. Nous pourrons échanger nos points de vue de la première à la dernière page. L'ouverture de mon blog, c'est avant tout la rencontre entre ma passion et le besoin de la partager avec vous, mes fidèles lecteurs. <br />Bonne lecture à tous ! </p>
-                      </div>
+                                <p class="col-sm-12 col-md-7" id="mot_auteur">Avec ce blog, j'espère créer une vraie proximité inédite avec vous. L'écriture est souvent un travail solitaire, c'est pourquoi l'envie de faire partager l'écriture de mon nouveau roman me ravi. Je publierai au fil du temps mes chapitres et vous pourrez me donner votre sentiment. Nous pourrons échanger nos points de vue de la première à la dernière page. L'ouverture de mon blog, c'est avant tout la rencontre entre ma passion et le besoin de la partager avec vous, mes fidèles lecteurs. <br />Bonne lecture à tous ! </p>
+                    </div>
+                    <div class="jumbotron row" id="publications">
+                        <h2 class="text-center">Découvrez toutes les publications du roman "Billet simple pour l'Alaska":</h2>
 
-                      <div class="jumbotron row" id="publications">
-                            <h2 class="text-center">Découvrez toutes les publications du roman "Billet simple pour l'Alaska":</h2>
-                             
-<?php
-while ($data = $posts->fetch())
-{
-?>
+                            <?php
+                                while ($data = $posts->fetch()) { ?>
 
-
-
-    <div class="last_news">
-        <h3>
-            <?php echo htmlspecialchars($data['title']) ?>
-            <em> posté le <?php echo $data['creation_date_fr'] ?></em>   <i class="far fa-comment-alt"><?php echo $post['nbcomment']; ?>commentaires</i>
-    
-        </h3>
-        
-        <p>
-            <p><?php  echo substr($data['content'],0,400) ?>... <a href="index.php?action=post&amp;id=<?php echo $data['id'] ?>">Lire la suite</a></p>
-            <br />
-        </p>
-    </div>
-<?php
-}
-$posts->closeCursor();
-?>
-
-            </div>
-
+                        <div class="last_news">
+                            <h3>
+                                <?php echo htmlspecialchars($data['title']) ?>
+                                <em> posté le <?php echo $data['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt"></i>&nbsp;<?php echo $post['nbcomment']; ?>&nbsp;commentaires
+                            </h3>
+                                <p>
+                                    <p><?php  echo substr($data['content'],0,400) ?>... <a href="index.php?action=post&amp;id=<?php echo $data['id'] ?>">Lire la suite</a></p>
+                                    <br />
+                                </p>
+                        </div>
+                            <?php
+                            }
+                            $posts->closeCursor();
+                            ?>
+                    </div>
                 </div>
-            <?php $content = ob_get_clean(); ?>
-            <?php ob_start(); ?>
-
-
+                <?php $content = ob_get_clean(); ?>
+                <?php ob_start(); ?>
 
             <!-- jQuery -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -150,7 +130,7 @@ $posts->closeCursor();
             
             <script>
                   // Scroll fluide menu top
-                  /*$(function () {
+                  $(function () {
                         $('.ancre').on('click', function(e) {
                               e.preventDefault();
                               var hash = this.hash;
@@ -160,11 +140,9 @@ $posts->closeCursor();
                                     window.location.hash = hash;
                               });
                         });
-                  });*/
-            </script>
-        
+                  });
+            </script>       
         </body>
-
 </html>
 <?php  $footer = ob_get_clean(); ?>
 <?php require('template.php'); ?>
