@@ -35,13 +35,16 @@ class PostManager extends Manager
     }
 
     //Mise à jour avec incrémentation du nbre de commentaires
-    public function updatePostNbCom($id, $nbcomment) {
-        //var_dump($nbcomment);
-        //die();
-        $nbcomment= $nbcomment++;
+    public function updatePostNbCom($id) {
+        
         $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts WHERE id = ?');
+        $req->execute(array($id));
+        $post = $req->fetch();
+        $nbcomment = $post['nbcomment']+1;
+        
         $req= $db->prepare('UPDATE posts SET nbcomment = ? WHERE id = ?');
-        $req->execute(array($id, $_POST['nbcomment']));
+        $req->execute(array($nbcomment, $id));
 
         return $req;
     }

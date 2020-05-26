@@ -19,7 +19,7 @@ try {
             }
         }
         elseif ($_GET['action'] == 'addComment') {
-            //var_dump($_GET['id'], $_POST['pseudo'], $_POST['comment']);
+            //var_dump($_GET['id'], $_POST['pseudo'], $_POST['comment']); // ok
             //die();
             
             if (isset($_GET['id']) && $_GET['id'] > 0) {

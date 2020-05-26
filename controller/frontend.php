@@ -10,7 +10,7 @@ function listPosts()
 {
     $postManager = new p4_blog\model\PostManager();
     $posts = $postManager->getPosts();
- 
+    
     require('view/frontend/homeView.php');
 }
 
@@ -39,15 +39,15 @@ function post()
 // Ajoute un commentaire au chapitre 
 function addComment($postId, $pseudo, $comment)
 {
-    //var_dump($postId, $pseudo, $comment);
+    //var_dump($postId, $pseudo, $comment); // ok
     //die();
     $postManager = new p4_blog\model\PostManager();
     $commentManager = new p4_blog\model\CommentManager();
-    //var_dump($_GET['id'], $_POST['nbcomment']);
+    //var_dump($_GET['id'], $_POST['nbcomment']); // id ok, nbcomment = null
     //die();
-    $post = $postManager->updatePostNbCom($_GET['id'], $_POST['nbcomment']);
+    $post = $postManager->updatePostNbCom($postId);
     $comments = $commentManager->postComment($postId, $pseudo, $comment);
-
+    
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }

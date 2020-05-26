@@ -1,6 +1,7 @@
 <?php echo $title = 'Billet simple pour l\'Alaska'; ?>
 
-<?php ob_start(); ?>
+<?php ob_start(); 
+?>
 <!DOCTYPE html>
     <html>
 
@@ -106,7 +107,7 @@
                         <div class="last_news">
                             <h3>
                                 <?php echo htmlspecialchars($data['title']) ?>
-                                <em> posté le <?php echo $data['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt"></i>&nbsp;<?php echo $post['nbcomment']; ?>&nbsp;commentaires
+                                <em> posté le <?php echo $data['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt"></i>&nbsp;<?php echo $data['nbcomment']; ?>&nbsp;commentaires
                             </h3>
                                 <p>
                                     <p><?php  echo substr($data['content'],0,400) ?>... <a href="index.php?action=post&amp;id=<?php echo $data['id'] ?>">Lire la suite</a></p>

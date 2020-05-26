@@ -58,7 +58,7 @@ function listReportedComment() {
 
     $commentManager = new p4_blog\model\CommentManager();
     $s_comments = $commentManager->listReportedComment();
-    
+
     require('view/frontend/viewReportedComment.php');
     
 }

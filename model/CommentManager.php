@@ -20,7 +20,7 @@ class CommentManager extends Manager
     //Création d'un commentaire
     public function postComment($postId, $pseudo, $comment)
     {
-        //var_dump($postId, $pseudo, $comment);
+        //var_dump($postId, $pseudo, $comment);// ok
         //die();
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, pseudo, comment, comment_date, reported_comment) VALUES(?, ?, ?, NOW(), "n")');

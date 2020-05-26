@@ -23,9 +23,9 @@
                   <?php echo htmlspecialchars($post['title']) ?>
                   <em> posté le <?php echo $post['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt">&nbsp;</i><?php echo $post['nbcomment'] ?>&nbsp;commentaires
                </h3>
-               <p>
-                  <?php echo nl2br(htmlspecialchars($post['content'])) ?>
-               </p>
+               <div>
+                  <?php echo $post['content'] ?>
+               </div>
             </div>
          </div>
          <div class="jumbotron" id="contact">
@@ -40,7 +40,7 @@
                            <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Votre message"></textarea>
                      </div>
                         <div class="form-group col-md-12">
-                           <button type="submit" class="btn btn-default pull-right">Valider</button>
+                           <input type="submit" class="btn btn-default pull-right" value="Valider">
                         </div>
                </form>
 
