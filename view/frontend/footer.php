@@ -92,9 +92,7 @@
   
 </footer>
 <!-- Footer -->
-
-  <script>
-                  
+  <script>                  
   // Scroll fluide footer menu
   $(function () {
     $('.ancre2').on('click', function(e) {

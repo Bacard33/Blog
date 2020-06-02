@@ -6,7 +6,6 @@ require_once("model/UserManager.php");
 
 class UserManager extends Manager
 {
-
     //Affiche espace admin
     public function espaceAdmin($mail, $password) 
     {  
@@ -17,5 +16,4 @@ class UserManager extends Manager
         $userInfo = $req->fetch();
         return $userInfo;    
     }
-
 }

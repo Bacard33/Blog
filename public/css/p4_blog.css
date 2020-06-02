@@ -8,7 +8,6 @@ body
   -o-background-size: cover;
   margin-top: 50px; 
 }
-
 /* Images */
 img 
 {					
@@ -35,7 +34,6 @@ img
     margin-left: 0em;
   }
 }
-
 /* Jumbotron */
 .jumbotron 
 {
@@ -64,26 +62,26 @@ p#mot_auteur {
 }
 /* Boutons commentaires signalés */
 button {
-    
-    border-radius: 0.5em;
+  border-radius: 0.5em;
 }
 button.no-signal a {
-    font-size: 1em; 
+  font-size: 1em; 
+  border: none;
 }
 .signal {
-    font-size: 1em;
-    color: red;
-    border: solid 1px #ccc;
-    padding: 0.3em;
-    border-radius: 0.5em;
-    background-color: white;
+  font-size: 1em;
+  color: red;
+  border: solid 1px #ccc;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  background-color: white;
 }
 .signal_ok {
-    font-size: 1em;
-    color: #337ab7    
+  font-size: 1em;
+  color: #337ab7    
 }
 i.fas.fa-thumbs-up {
-    margin-left: 22.5%
+  margin-left: 22.5%
 }
 i.fas.fa-trash-alt{
 	margin-left: 22.5%
@@ -109,9 +107,6 @@ i.fas.fa-trash-alt{
   .row-fluid h2 {
     font-size: 28px;
   }
-  /*footer#page-down.page-footer-fluid.font-small.lighten-5 {
-    position: absolute!important;
-  }*/
 }
 @media (max-width: 480px)
 {
@@ -119,7 +114,6 @@ i.fas.fa-trash-alt{
     margin-left: 0%;
     margin-right: 0%;
   }
-
 }
 @media (max-width: 680px)
 {
@@ -127,7 +121,6 @@ i.fas.fa-trash-alt{
     margin-left: 0%;
     margin-right: 0%;
   }
-
 }
 @media (max-width: 823px)
 {
@@ -135,7 +128,6 @@ i.fas.fa-trash-alt{
     margin-left: -1%;
     margin-right: 2%;
   }
-
 }
 /* Message popup */
 .fade-in {
@@ -184,11 +176,9 @@ i.fas.fa-trash-alt{
   100% {
     opacity:1;
 }
-
 /* Tableau affichage des chapitres */
 table {
   border: 1px solid black!important;
-
 }
 /*Gestion spécifique Taille du titre / écran < 400px */
 @media (max-width: 400px)
@@ -197,7 +187,6 @@ table {
 	{
 		font-size: 1em;
 	}
-  
    h3 {
     margin-top: 80px;
   }

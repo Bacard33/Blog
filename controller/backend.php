@@ -73,13 +73,18 @@ function approveComment($commentId) {
     require('view/frontend/viewReportedComment.php');
     
 }
-// Supprime le commentaire signalé 
+// Supprime un commentaire signalé 
 function deleteComment($commentId) {
-    
+    //var_dump($commentId); //ok
+    //die();
+    $postManager = new p4_blog\model\PostManager();
     $commentManager = new p4_blog\model\CommentManager();
+    $comment = $commentManager->getComment($commentId);
+    $action = 'del';
+    $post = $postManager->updatePostNbCom($comment['post_id'], $action);
     $deleteComment = $commentManager->deleteComment($commentId);
     $s_comments = $commentManager->listReportedComment();
-    
+
     require('view/frontend/viewReportedComment.php');
     
 }

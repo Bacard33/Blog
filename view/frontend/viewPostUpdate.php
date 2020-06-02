@@ -36,7 +36,7 @@
                            </div>
                            <div class="form-group">
                               <label for="postContent">Contenu du chapitre</label> 
-                              <?php echo $post['content']?>
+                              <textarea id="mytextarea" name="content" rows="15"><?php echo $post['content']?></textarea>
                            </div>  
                      </form>
                      <form action="index.php?action=deletePost&amp;id=<?php echo $post['id'] ?>" method="post">

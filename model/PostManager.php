@@ -10,15 +10,14 @@ class PostManager extends Manager
     public function getPosts()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
-
+        $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+        $req->execute();
         return $req;
     }
 
     //Récupère un chapitre
     public function getPost($postId)
-    {
-        
+    {  
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts WHERE id = ?');
         $req->execute(array($postId));
@@ -29,20 +28,30 @@ class PostManager extends Manager
     public function getAllPosts()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date');
+        $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date');
+        $req->execute();
 
         return $req;
     }
 
     //Mise à jour avec incrémentation du nbre de commentaires
-    public function updatePostNbCom($id) {
-        
+    public function updatePostNbCom($id, $action) {
+
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts WHERE id = ?');
         $req->execute(array($id));
         $post = $req->fetch();
-        $nbcomment = $post['nbcomment']+1;
         
+        if ($action == 'add') { 
+            $nbcomment = $post['nbcomment']+1;
+            //var_dump($post['nbcomment']);
+            //die();
+        }elseif ($action == 'del') {
+            $nbcomment = $post['nbcomment']-1;
+            //var_dump($post['nbcomment']);
+            //die();
+        } 
+                                                
         $req= $db->prepare('UPDATE posts SET nbcomment = ? WHERE id = ?');
         $req->execute(array($nbcomment, $id));
 

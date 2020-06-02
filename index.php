@@ -19,8 +19,6 @@ try {
             }
         }
         elseif ($_GET['action'] == 'addComment') {
-            //var_dump($_GET['id'], $_POST['pseudo'], $_POST['comment']); // ok
-            //die();
             
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['pseudo']) && !empty($_POST['comment'])) {
@@ -47,7 +45,8 @@ try {
             approveComment($_GET['id']);   
         }
         elseif($_GET['action'] == 'delComment') {
-            
+            //var_dump($_GET['id']);
+            //die();
             deleteComment($_GET['id']); 
         }
         elseif($_GET['action'] == 'newPost') {
@@ -63,16 +62,13 @@ try {
         elseif ($_GET['action'] == 'updatePost') {
             
             if($_SESSION['admin']== 1) {  
-
                 updatePost();
-            
             }
         }
         elseif ($_GET['action'] == 'view_update') {
 
             if($_SESSION['admin']== 1) {
-                if(isset($_GET['id']) && $_GET['id'] > 0) {
-                    
+                if(isset($_GET['id']) && $_GET['id'] > 0) {   
                     viewUpdatePost();
                 }
             }  
@@ -88,8 +84,7 @@ try {
         }
         elseif ($_GET['action'] == 'deletePost') {
 
-            if($_SESSION['admin']== 1) {
-                
+            if($_SESSION['admin']== 1) {  
                 deletePost($_GET['id']);
             }
         } 
@@ -98,6 +93,8 @@ try {
             if(!empty($_POST['mail']) && !empty($_POST['password'])) {
                 $mail = htmlspecialchars(strtolower($_POST['mail']));
                 espaceAdmin($mail, $password);
+            }else{
+                throw new Exception('Vous n\'êtes pas autorisé à accéder à l\'administration');
             }
         }
         elseif($_GET['action'] == 'connexion') {

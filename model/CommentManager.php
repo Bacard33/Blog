@@ -9,7 +9,6 @@ class CommentManager extends Manager
     //Récupère les commentaires d'un article
     public function getComments($postId)
     {
-
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT id, pseudo, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS comment_date_fr, reported_comment FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
         $comments->execute(array($postId));
@@ -20,8 +19,6 @@ class CommentManager extends Manager
     //Création d'un commentaire
     public function postComment($postId, $pseudo, $comment)
     {
-        //var_dump($postId, $pseudo, $comment);// ok
-        //die();
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, pseudo, comment, comment_date, reported_comment) VALUES(?, ?, ?, NOW(), "n")');
         $affectedLines = $comments->execute(array($postId, $pseudo, $comment));
@@ -33,7 +30,7 @@ class CommentManager extends Manager
     public function getComment($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, pseudo, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE id = ?');
+        $req = $db->prepare('SELECT id, pseudo, comment, post_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE id = ?');
         $req->execute(array($id));
         $comment = $req->fetch();
 
@@ -62,8 +59,7 @@ class CommentManager extends Manager
 
     //Signalement du commentaire approuvé
     public function approveComment($id)
-    {
-        
+    { 
         $db = $this->dbConnect();
         $okListcomments = $db->prepare('UPDATE comments SET reported_comment = "x" WHERE id = ?');
         $okListcomments->execute(array($id));
@@ -73,9 +69,14 @@ class CommentManager extends Manager
     //Suppression du commentaire signalé
     public function deleteComment($id)
     {
+        //var_dump($nbcomment, $id);
+        //die();
         $db = $this->dbConnect();
         $deleteComment = $db->prepare('DELETE FROM comments WHERE id = ?');
         $deleteComment->execute(array($id));
+
+        //$req= $db->prepare('UPDATE posts SET nbcomment = ? WHERE id = ?');
+        //$req->execute(array($nbcomment, $id));
 
         return $deleteComment;
     }

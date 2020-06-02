@@ -107,7 +107,7 @@
                         <div class="last_news">
                             <h3>
                                 <?php echo htmlspecialchars($data['title']) ?>
-                                <em> posté le <?php echo $data['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt"></i>&nbsp;<?php echo $data['nbcomment']; ?>&nbsp;commentaires
+                                <em> posté le <?php echo $data['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt"></i>&nbsp;<?php echo $data['nbcomment']; ?>&nbsp;commentaire(s)
                             </h3>
                                 <p>
                                     <p><?php  echo substr($data['content'],0,400) ?>... <a href="index.php?action=post&amp;id=<?php echo $data['id'] ?>">Lire la suite</a></p>

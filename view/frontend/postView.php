@@ -21,10 +21,10 @@
             <div class="news mt-5">
                <h3>
                   <?php echo htmlspecialchars($post['title']) ?>
-                  <em> posté le <?php echo $post['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt">&nbsp;</i><?php echo $post['nbcomment'] ?>&nbsp;commentaires
+                  <em> posté le <?php echo $post['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt">&nbsp;</i><?php echo $post['nbcomment'] ?>&nbsp;commentaire(s)
                </h3>
                <div>
-                  <?php echo $post['content'] ?>
+                  <?php echo ($post['content']) ?>
                </div>
             </div>
          </div>
@@ -55,7 +55,7 @@
                            <span class="signal_ok" type="submit"><i class="fas fa-check-square"> Commentaire accepté</i></span>
                      <?php
                         } else { ?>
-                           <button class="no-signal" type="submit"><a href="index.php?action=reportedComment&amp;id=<?php echo $comment['id'] ?>&postId=<?php echo $post['id'] ?>"><i class="far fa-bell"> Signaler</i></a></button>
+                           <span class="no-signal" type="submit"><a href="index.php?action=reportedComment&amp;id=<?php echo $comment['id'] ?>&postId=<?php echo $post['id'] ?>"><i class="far fa-bell"> Signaler</i></a></span>
                      <?php
                      }
                      } ?>

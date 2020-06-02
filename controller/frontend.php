@@ -26,26 +26,13 @@ function post()
     require('view/frontend/postView.php');
 }
 
-// Incrémentation du nombre de commentaires
-/*function updatePostNbCom($id, $nbcomment) {
-    var_dump($id, $nbcomment);
-    die();
-    $postManager = new p4_blog\model\PostManager();
-    $post = $postManager->UpdatePostNbCom($id, $nbcomment);
-
-    require('view/frontend/postView.php');
-}*/
-
 // Ajoute un commentaire au chapitre 
 function addComment($postId, $pseudo, $comment)
 {
-    //var_dump($postId, $pseudo, $comment); // ok
-    //die();
     $postManager = new p4_blog\model\PostManager();
     $commentManager = new p4_blog\model\CommentManager();
-    //var_dump($_GET['id'], $_POST['nbcomment']); // id ok, nbcomment = null
-    //die();
-    $post = $postManager->updatePostNbCom($postId);
+    $action = 'add';
+    $post = $postManager->updatePostNbCom($postId, $action);
     $comments = $commentManager->postComment($postId, $pseudo, $comment);
     
     if ($affectedLines === false) {
@@ -63,8 +50,7 @@ function reportedComment($commentId, $postId) {
     $commentManager = new p4_blog\model\CommentManager();
     $reportedComment = $commentManager->reportedComment($commentId);
     
-    header('Location: index.php?action=post&id=' . $postId);
-    
+    header('Location: index.php?action=post&id=' . $postId);   
 }
 
 // Accès connexion admin
