@@ -1,10 +1,8 @@
-<?php echo $title = 'Billet simple pour l\'Alaska'; ?>
-
-<?php ob_start(); 
-?>
 <!DOCTYPE html>
     <html>
-
+        <?php echo $title = 'Billet simple pour l\'Alaska'; ?>
+        <?php ob_start(); ?>
+        
         <head>
             <meta charset="utf-8"> 
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +34,9 @@
                     ==================================================--> 
                     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">          
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#page-top">Billet simple pour l'Alaska</a>
+                            <ul class="nav navbar-nav">
+                                <li><a href="#carousel" class="ancre">Billet simple pour l'Alaska</a></li>
+                            </ul>
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -45,14 +45,26 @@
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="#auteur"class="ancre">Accueil</a></li>
+                                <li><a href="#accueil"class="ancre">Accueil</a></li>
                                 <li><a href="#publications" class="ancre">Chapitres</a></li>
-                                <?php if($_SESSION['admin'] != 1) {  ?>
-                                <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
-                                if($_SESSION['admin'] == 1) { ?>
-                                    <li id="adminDeconnex" class="afficherDeconnex"><a href="index.php?action=deconnexion">Déconnexion</a></li>
-                                    <?php }
-                                    ?>
+                                        <?php if($_SESSION['admin'] != 1) {  ?>
+                                        <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
+                                        if($_SESSION['admin'] == 1) { ?>
+                                        <li id="adminDeconnex" class="afficherDeconnex"><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                                        <?php }
+                                        ?>
+                                <li class="dropdown">
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#accueil"class="ancre">Accueil</a></li>
+                                        <li><a href="#publications" class="ancre">Chapitres</a></li>
+                                        <?php if($_SESSION['admin'] != 1) {  ?>
+                                        <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
+                                        if($_SESSION['admin'] == 1) { ?>
+                                        <li id="adminDeconnex" class="afficherDeconnex"><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                                        <?php }
+                                        ?>
+                                    </ul>
+                                </li>         
                             </ul>                        
                         </div>    
                     </nav>
@@ -93,7 +105,7 @@
                 <!-- Corps de page déjà codé
                 ==================================================--> 
                 <div class="container">
-                    <div class="jumbotron row" id="auteur">
+                    <div class="jumbotron row" id="accueil">
                         <h2 class="text-center">Bienvenue dans mon blog</h2>
                             <img class="col-sm-12 col-md-5" src="public/img/jeanF.jpg" alt="Accueil">     
                                 <p class="col-sm-12 col-md-7" id="mot_auteur">Avec ce blog, j'espère créer une vraie proximité inédite avec vous. L'écriture est souvent un travail solitaire, c'est pourquoi l'envie de faire partager l'écriture de mon nouveau roman me ravi. Je publierai au fil du temps mes chapitres et vous pourrez me donner votre sentiment. Nous pourrons échanger nos points de vue de la première à la dernière page. L'ouverture de mon blog, c'est avant tout la rencontre entre ma passion et le besoin de la partager avec vous, mes fidèles lecteurs. <br />Bonne lecture à tous ! </p>

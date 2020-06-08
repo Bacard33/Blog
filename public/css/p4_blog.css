@@ -81,10 +81,10 @@ button.no-signal a {
   color: #337ab7    
 }
 i.fas.fa-thumbs-up {
-  margin-left: 22.5%
+  margin-left: 38%
 }
 i.fas.fa-trash-alt{
-	margin-left: 22.5%
+	margin-left: 38%
 }
 /* Formulaire de connexion */
 .connex-form {
@@ -94,6 +94,10 @@ i.fas.fa-trash-alt{
 	max-width: 100%;
 	border: 5px solid black;
 	padding: 1em;
+}
+/* The "Forgot password" text */
+span.psw {
+  float: right;
 }
 @media (max-width: 400px)
 {
@@ -113,6 +117,23 @@ i.fas.fa-trash-alt{
   .connex-form {
     margin-left: 0%;
     margin-right: 0%;
+  }
+  .table thead {
+    display: none;
+  }
+  .table tr {
+    display: block;
+    margin-bottom: 40px;
+    margin-bottom: 40px;
+  }
+  .table td {
+    display: block;
+    text-align: right;
+  }
+  .table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
   }
 }
 @media (max-width: 680px)

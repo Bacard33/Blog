@@ -48,8 +48,6 @@ class PostManager extends Manager
             //die();
         }elseif ($action == 'del') {
             $nbcomment = $post['nbcomment']-1;
-            //var_dump($post['nbcomment']);
-            //die();
         } 
                                                 
         $req= $db->prepare('UPDATE posts SET nbcomment = ? WHERE id = ?');

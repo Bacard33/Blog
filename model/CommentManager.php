@@ -75,9 +75,6 @@ class CommentManager extends Manager
         $deleteComment = $db->prepare('DELETE FROM comments WHERE id = ?');
         $deleteComment->execute(array($id));
 
-        //$req= $db->prepare('UPDATE posts SET nbcomment = ? WHERE id = ?');
-        //$req->execute(array($nbcomment, $id));
-
         return $deleteComment;
     }
 }

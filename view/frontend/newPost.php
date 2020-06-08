@@ -1,8 +1,8 @@
-<?php  $title = "Création d'un chapitre"; ?>
-<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
    <html>
+   <?php  $title = "Création d'un chapitre"; ?>
+   <?php ob_start(); ?>
       <head>
          <meta charset="utf-8" />
          <meta name="viewport" content="width=device-width, initial-scale=1">

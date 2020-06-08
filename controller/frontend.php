@@ -58,6 +58,11 @@ function loginAdmin() {
 
     require ('view/frontend/login.php');
 }
+// Oubli du mdp
+function forgetPass() {
+
+    require ('view/frontend/forgetPass.php');
+}
 // Accès espace admin
 function espaceAdmin($mail, $password) {
     
@@ -66,11 +71,12 @@ function espaceAdmin($mail, $password) {
     $userInfo = $userManager->espaceAdmin($mail, $password);
 
     if($pass == $userInfo['password']) {
-            $_SESSION['admin']=1;
-            require 'view/frontend/admin.php';
+            if($_SESSION['admin']=1) {
+                require 'view/frontend/admin.php';
+            }            
         }else{ 
             //Si les informations sont mauvaises / L'administrateur n'est pas connecté 
             $_SESSION['admin']=0;
             throw new Exception('Erreur de connexion : Veuillez vérifier vos identifiants.');
-        }   
+        }
 }

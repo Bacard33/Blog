@@ -1,10 +1,7 @@
-<?php  $title = "Gérer les commentaires signalés";?>
-
-<?php ob_start(); ?>
-
 <!DOCTYPE html>
 <html lang="fr">
-
+    <?php  $title = "Gérer les commentaires signalés";?>
+    <?php ob_start(); ?>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +19,8 @@
             <div class="row-fluid">
                 <h1>Billet simple pour l'Alaska</h1>
                     <h2>Voici ici la liste des commentaires signalés :</h2> 
-                        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>          
+                        <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button> 
+                        <br /><br />         
                             <table class="table table-hover"> 
                                 <thead>
                                     <tr>
@@ -37,11 +35,11 @@
                                     <?php while ($datas = $s_comments->fetch()) {
                                         if ($datas ['reported_comment'] == "o") { ?>
                                             <tr>
-                                                <td><?php echo $datas['pseudo']; ?></td>
-                                                <td>le <?php echo $datas['comment_date']; ?></td>
-                                                <td><?php echo $datas['comment'];?></td>
-                                                <td><a href="index.php?action=okComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-thumbs-up"></i></a></td>
-                                                <td><a href="index.php?action=delComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>   
+                                                <td data-label="Pseudo"><?php echo $datas['pseudo']; ?></td>
+                                                <td data-label="Date">le <?php echo $datas['comment_date']; ?></td>
+                                                <td data-label="Commentaire"><?php echo $datas['comment'];?></td>
+                                                <td data-label="Accepter le commentaire"><a href="index.php?action=okComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-thumbs-up"></i></a></td>
+                                                <td data-label="Supprimer le commentaire"><a href="index.php?action=delComment&amp;id=<?php echo $datas['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>   
                                             </tr>
                                     <?php
                                     } 

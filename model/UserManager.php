@@ -14,6 +14,7 @@ class UserManager extends Manager
         $req = $db->prepare('SELECT * FROM users WHERE mail = ?'); 
         $req->execute(array($mail));
         $userInfo = $req->fetch();
-        return $userInfo;    
+
+        return $userInfo;  
     }
 }

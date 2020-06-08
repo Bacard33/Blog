@@ -1,14 +1,13 @@
-<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
 
+    <?php ob_start(); ?>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
                 
                 
-
 <footer class="page-footer-fluid font-small lighten-5" id="page-down" data-spy="scroll" data-target=".page-footer">
 
   <div style="background-color: #101010; color: #9d9d9d;">
