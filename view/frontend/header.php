@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <?php ob_start(); ?>
-    
-        <meta charset="utf-8"> 
+    <head>
+            <meta charset="utf-8"> 
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Billet simple pour l'Alaska</title>
@@ -12,9 +12,13 @@
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
             <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-               
-            <div class="container-fluid">    
+            <!-- jQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <!-- Javascript de Bootstrap -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        </head>
                 <header>
+                    <div class="container-fluid">
                     <!--Navigation
                     ==================================================--> 
                     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">          
@@ -30,7 +34,7 @@
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="index.php"class="ancre">Accueil</a></li>
+                                <li><a href="index.php#accueil"class="ancre">Accueil</a></li>
                                 <li><a href="index.php?action=listPosts#publications" class="ancre">Chapitres</a></li>
                                         <?php if($_SESSION['admin'] != 1) {  ?>
                                         <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }

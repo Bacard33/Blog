@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <?php ob_start(); ?>
-
+  <?php ob_start(); ?>
+  <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+  </head>
                 
                 
 <footer class="page-footer-fluid font-small lighten-5" id="page-down" data-spy="scroll" data-target=".page-footer">

@@ -109,6 +109,16 @@ try {
                 throw new Exception('Vous n\'êtes pas autorisé à accéder à l\'administration');
             }
         }
+        // recherche email admin dans BDD
+        elseif ($_GET['action'] == "readAdmin") {
+            
+            if(!empty($_POST['recup_mail'])) {
+                $mail = htmlspecialchars(strtolower($_POST['recup_mail']));
+                readAdmin($mail);
+            }else{
+                throw new Exception('Vous n\'avez pas saisi d\'email valide');
+            }
+        }
         // Affiche la page de connexion pour l'administrateur
         elseif($_GET['action'] == 'connexion') {
              

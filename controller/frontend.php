@@ -80,3 +80,15 @@ function espaceAdmin($mail, $password) {
             throw new Exception('Erreur de connexion : Veuillez vérifier vos identifiants.');
         }
 }
+function readAdmin($mail) {
+    
+    $userManager = new p4_blog\model\UserManager();
+    $userInfo = $userManager->readAdmin($mail);
+
+    if($userInfo) {
+        echo 'mail ok';
+
+    }else {
+        throw new Exception('Email invalide');
+    }
+}

@@ -17,4 +17,13 @@ class UserManager extends Manager
 
         return $userInfo;  
     }
+    public function readAdmin($mail) 
+    {  
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM users WHERE mail = ?'); 
+        $req->execute(array($mail));
+        $userInfo = $req->fetch();
+
+        return $userInfo;  
+    }
 }
