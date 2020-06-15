@@ -1,6 +1,5 @@
 <?php
 session_start();
-error_reporting(E_ALL);
 
 require('controller/frontend.php');
 require('controller/backend.php');
@@ -39,7 +38,7 @@ try {
             
             reportedComment($_GET['id'], $_GET['postId']);
         }
-        // Affiche la liste des commenatires signalés
+        // Affiche la liste des commentaires signalés
         elseif($_GET['action'] == 'listReportedComment') {
 
             listReportedComment();   
@@ -118,6 +117,11 @@ try {
             }else{
                 throw new Exception('Vous n\'avez pas saisi d\'email valide');
             }
+        }
+        // Envoi d'un mail avec un nouveau mot de passe provisoire en cas de mdp oublié
+        elseif ($_GET['action'] == "sendTempPwd") {
+
+            sendTempPwd($mailtoAddress, $randomInt);
         }
         // Affiche la page de connexion pour l'administrateur
         elseif($_GET['action'] == 'connexion') {

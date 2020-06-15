@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="fr-FR">
   <?php ob_start(); ?>
   <head>
+    <meta charset="utf-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
@@ -46,7 +46,7 @@
           <!-- Footer Links -->
           <div class="container text-center text-md-left mt-5">
             <!-- Grid row -->
-            <div class="row mt-3 white-text">
+            <div class="row mt-3 white-text"></div>
               <!-- Grid column -->
               <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
                 <!-- Content -->

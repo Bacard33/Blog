@@ -1,14 +1,13 @@
 <?php session_start(); ?>
 
 <!DOCTYPE html>
-<html lang="fr">
-<html>
+<html lang="fr-FR">
 
     <?php  $title = 'Espace Admin'; ?>
     <?php ob_start(); ?>
     
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="public/css/p4_blog.css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">

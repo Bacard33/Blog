@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
 
-    <?php $title = 'ConnexionAdmin'; ?>
-    <?php ob_start(); ?>
     <head>
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,14 +16,16 @@
   <body id="page-top" data-spy="scroll" data-target=".navbar">
 
     <div class="container-fluid">
-      <div class="jumbotron row" id="login">
+      <div class="jumbotron row" id="temp_pwd">
         <div class="fade-in">
           
-            <h2 class="text-center">Connexion administration</h2>
+            <h2 class="text-center">Envoi d'un nouveau mot de passe provisoire</h2>
+                <h4 class="text-center">Vous avez oublié votre mot de passe ?</h4>
+                    <h4 class="text-center">Il vous suffit de confirmer à nouveau votre adresse mail ci-dessous afin de recevoir un nouveau mot de passe dans votre boite.</h4>
+                        <h4 class="text-center">Vous pourrez le personnaliser par la suite dans votre Espace administrateur.</h4>
+            <div class="connex-form">
 
-              <div class="connex-form">
-
-                <form class="form-horizontal" id="login-form"  method="post" action="index.php?action=admin">
+                <form class="form-horizontal" id="login-form"  method="post" action="index.php?action=sendTempPwd">
 
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="mail">Adresse mail : </label>
@@ -34,20 +34,10 @@
                       </div>
                   </div>
       
-                  <div class="form-group">
-                    <label class="control-label col-sm-4" for="pwd">Mot de passe : </label>
-                      <div class="col-sm-5"> 
-                        <input type="password" class="form-control" id="mdp" name="password" placeholder="Votre mot de passe" required>
-                      </div>
-                  </div>
-      
                     <div class="form-group"> 
                       <div class="col-sm-offset-4 col-sm-10">
-                        <input type="submit" class="btn btn-default" id="submit" value="Se connecter">
+                        <input type="submit" class="btn btn-default" id="submit" value="Envoyer">
                       </div>
-                    </div>
-                    <div class="container" style="background-color:#f1f1f1">
-                      <span class="psw">Mot de passe <a href="index.php?action=forget">oublié?</a></span>
                     </div>
                 </form>
 

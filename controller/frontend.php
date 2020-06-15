@@ -86,9 +86,9 @@ function readAdmin($mail) {
     $userInfo = $userManager->readAdmin($mail);
 
     if($userInfo) {
-        echo 'mail ok';
+        require 'view/frontend/recoverPass.php';
 
     }else {
-        throw new Exception('Email invalide');
+        throw new Exception('Vous n\'avez pas saisi d\'email valide <br /> Vous n\'êtes donc pas autorisé à accéder à l\'administration');
     }
 }

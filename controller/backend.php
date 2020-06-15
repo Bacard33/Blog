@@ -85,6 +85,5 @@ function deleteComment($commentId) {
     $deleteComment = $commentManager->deleteComment($commentId);
     $s_comments = $commentManager->listReportedComment();
 
-    require('view/frontend/viewReportedComment.php');
-    
+    require('view/frontend/viewReportedComment.php');    
 }

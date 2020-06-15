@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-    <html>
-        <?php echo $title = 'Billet simple pour l\'Alaska'; ?>
-        <?php ob_start(); ?>
+<html lang="fr-FR">
+    <?php echo $title = 'Billet simple pour l\'Alaska'; ?>
+    <?php ob_start(); ?>
         
         <head>
             <meta charset="utf-8"> 
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Billet simple pour l'Alaska</title>
-            <meta name="description" content="Le blog du nouveau roman de Jean Forteroche">
+            <meta name="description" property= "blog description"content="Le blog du nouveau roman de Jean Forteroche">
             <link rel="stylesheet" href="public/css/p4_blog.css">
             <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -32,11 +31,9 @@
                 <header>
                     <!--Navigation
                     ==================================================--> 
-                    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">          
+                    <nav class="navbar navbar-inverse navbar-fixed-top" role="onglets_navigation">          
                         <div class="navbar-header">
-                            <ul class="nav navbar-nav">
-                                <li><a href="#carousel" class="ancre">Billet simple pour l'Alaska</a></li>
-                            </ul>
+                            <a class="ancre" href="#carousel">Billet simple pour l'Alaska</a>
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -45,7 +42,7 @@
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="#accueil"class="ancre">Accueil</a></li>
+                                <li><a href="#accueil" class="ancre">Accueil</a></li>
                                 <li><a href="#publications" class="ancre">Chapitres</a></li>
                                         <?php if($_SESSION['admin'] != 1) {  ?>
                                         <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
@@ -55,10 +52,10 @@
                                         ?>
                                 <li class="dropdown">
                                     <ul class="dropdown-menu">
-                                        <li><a href="#accueil"class="ancre">Accueil</a></li>
+                                        <li><a href="#accueil" class="ancre">Accueil</a></li>
                                         <li><a href="#publications" class="ancre">Chapitres</a></li>
                                         <?php if($_SESSION['admin'] != 1) {  ?>
-                                        <li id="adminConnex" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
+                                        <li id="adminConnex_bis" class="afficherConnex"><a href="index.php?action=connexion">Administration - Connexion -</a></li> <?php }
                                         if($_SESSION['admin'] == 1) { ?>
                                         <li id="adminDeconnex" class="afficherDeconnex"><a href="index.php?action=deconnexion">Déconnexion</a></li>
                                         <?php }
