@@ -7,18 +7,19 @@
       <meta charset="utf-8"> 
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Billet simple pour l'Alaska</title>
-      <meta name="description" property= "blog description"content="Le blog du nouveau roman de Jean Forteroche">
+      <meta name="description" property= "blog description" content="Le blog du nouveau roman de Jean Forteroche">
       <link rel="stylesheet" href="public/css/p4_blog.css">
+      <script src="https://cdn.tiny.cloud/1/i53cfoz3cdbd6wjz3xguaidinere4i15054cqxueuwk22jnm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-      <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
       
    </head>
    <body id="page-top" data-spy="scroll" data-target=".navbar">    
       <div class="container-fluid">
          <div class="jumbotron row" id="publications">
-            <div class="news mt-5">
+            <div class="news mt-5" id="chap">
                <h3>
                   <?php echo htmlspecialchars($post['title']) ?>
                   <em> posté le <?php echo $post['creation_date_fr'] ?></em>&ensp;<i class="far fa-comment-alt">&nbsp;</i><?php echo $post['nbcomment'] ?>&nbsp;commentaire(s)

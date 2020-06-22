@@ -44,8 +44,7 @@ class PostManager extends Manager
         
         if ($action == 'add') { 
             $nbcomment = $post['nbcomment']+1;
-            //var_dump($post['nbcomment']);
-            //die();
+            
         }elseif ($action == 'del') {
             $nbcomment = $post['nbcomment']-1;
         } 

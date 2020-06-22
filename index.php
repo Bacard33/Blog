@@ -110,19 +110,15 @@ try {
         }
         // recherche email admin dans BDD
         elseif ($_GET['action'] == "readAdmin") {
-            
+
             if(!empty($_POST['recup_mail'])) {
                 $mail = htmlspecialchars(strtolower($_POST['recup_mail']));
-                readAdmin($mail);
+                readAdmin($mail);          
             }else{
                 throw new Exception('Vous n\'avez pas saisi d\'email valide');
             }
         }
-        // Envoi d'un mail avec un nouveau mot de passe provisoire en cas de mdp oublié
-        elseif ($_GET['action'] == "sendTempPwd") {
-
-            sendTempPwd($mailtoAddress, $randomInt);
-        }
+        
         // Affiche la page de connexion pour l'administrateur
         elseif($_GET['action'] == 'connexion') {
              
@@ -130,6 +126,16 @@ try {
                 require ('view/frontend/admin.php');
             }else{
                 loginAdmin();
+            }
+        }
+
+        // Affiche la page de connexion pour l'administrateur en cas de réinitialisation du mdp
+        elseif($_GET['action'] == 'new_connexion') {
+             
+            if ($_SESSION['admin']== 1){
+                require ('view/frontend/admin.php');
+            }else{
+                loginAdminNew();
             }
         }
         // Affiche la page en cas d'oubli du mdp

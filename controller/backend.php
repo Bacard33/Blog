@@ -75,8 +75,7 @@ function approveComment($commentId) {
 }
 // Supprime un commentaire signalé 
 function deleteComment($commentId) {
-    //var_dump($commentId); //ok
-    //die();
+    
     $postManager = new p4_blog\model\PostManager();
     $commentManager = new p4_blog\model\CommentManager();
     $comment = $commentManager->getComment($commentId);

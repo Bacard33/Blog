@@ -3,9 +3,10 @@
   <?php ob_start(); ?>
   <head>
     <meta charset="utf-8">
+    <title>Billet simple pour l'Alaska</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
   </head>
                 
                 
@@ -19,7 +20,7 @@
 
         <!-- Grid column -->
         <div class="row text-center">
-          <h3>Suivez-moi !</h3>
+          <h2>Suivez-moi !</h2>
             <!-- Facebook -->
             <a class="btn btn-default">
               <i class="fab fa-facebook-square fa-2x"></i>

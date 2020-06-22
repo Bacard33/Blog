@@ -17,10 +17,14 @@ img
 .navbar {
 	border-radius: 0%;  	
 	}
+.navbar-header {
+  margin-top: 7.3px;
+}
 .navbar-header a 
 {
 	font-size: 1.5em;
 	margin-left: 1em;
+  margin-top: 7.3px;
   color: #fff;
 }
 .nav a 
@@ -87,8 +91,37 @@ i.fas.fa-thumbs-up {
 i.fas.fa-trash-alt{
 	margin-left: 38%
 }
+/* Titres vues */
+#admin {
+  margin-top: 2em;
+}
+#errorPage {
+  margin-top: 2em;
+}
+#forget {
+  margin-top: 2em;
+}
+#login {
+  margin-top: 2em;
+}
+#create {
+  margin-top: 2em;
+}
+#update {
+  margin-top: 2em;
+}
+#modif {
+  margin-top: 2em;
+}
+#list {
+  margin-top: 2em;
+}
+#chap {
+  margin-top: 2em;
+}
 /* Formulaire de connexion */
 .connex-form {
+  margin-top: 3%;
 	margin-left: 30%;
 	margin-right: 30%;
 	margin-bottom: 2em;
@@ -96,8 +129,21 @@ i.fas.fa-trash-alt{
 	border: 5px solid black;
 	padding: 1em;
 }
+#forget-pass {
+  padding-bottom: 2.5em;
+}
+#new-pass {
+  margin-top: 2em;
+  padding-bottom: 2.5em;
+}
+#temp-pwd {
+  margin-top: 2em;
+}
 /* The "Forgot password" text */
 span.psw {
+  float: right;
+}
+#log {
   float: right;
 }
 @media (max-width: 400px)
@@ -119,6 +165,9 @@ span.psw {
     margin-left: 0%;
     margin-right: 0%;
   }
+  #log {
+    margin-right: 4em;
+}
   .table thead {
     display: none;
   }
@@ -143,12 +192,18 @@ span.psw {
     margin-left: 0%;
     margin-right: 0%;
   }
+  .navbar-toggle {
+    margin-right: 25px!important;
+  }
 }
 @media (max-width: 823px)
 {
   .connex-form {
     margin-left: -1%;
     margin-right: 2%;
+  }
+  .navbar-toggle {
+    margin-right: 25px!important;
   }
 }
 /* Message popup */

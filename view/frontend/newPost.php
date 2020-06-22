@@ -5,11 +5,12 @@
       <head>
          <meta charset="utf-8">
          <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Billet simple pour l'Alaska</title>
          <script src="https://cdn.tiny.cloud/1/i53cfoz3cdbd6wjz3xguaidinere4i15054cqxueuwk22jnm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
          <link rel="stylesheet" href="public/css/p4_blog.css">
          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-         <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+         <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
          <link rel="stylesheet" href="public/css/p4_blog.css">
       </head>
@@ -17,7 +18,7 @@
          <div class="container-fluid">
             <div class="jumbotron row">
                <h1>Billet simple pour l'Alaska</h1>
-                  <h2>Créer un chapitre</h2>
+                  <h2 class="text-center" id="create">Créer un chapitre</h2>
                
                      <form action="index.php?action=createNewPost" method="post">
                         <div class="form-group">

@@ -5,6 +5,7 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/UserManager.php');
 
+
 //Récupère la liste des chapitres
 function listPosts()
 {
@@ -58,6 +59,11 @@ function loginAdmin() {
 
     require ('view/frontend/login.php');
 }
+// Accès connexion admin après réinitialisation mdp
+function loginAdminNew() {
+
+    require ('view/frontend/loginNewPass.php');
+}
 // Oubli du mdp
 function forgetPass() {
 
@@ -80,13 +86,24 @@ function espaceAdmin($mail, $password) {
             throw new Exception('Erreur de connexion : Veuillez vérifier vos identifiants.');
         }
 }
+// Compare l'email avec celui de la BDD
 function readAdmin($mail) {
-    
+
     $userManager = new p4_blog\model\UserManager();
     $userInfo = $userManager->readAdmin($mail);
 
     if($userInfo) {
-        require 'view/frontend/recoverPass.php';
+
+        $randomInt = rand(1000000, 999999999);
+        $tempPwd = hash('md5', $randomInt);
+        $userInfo = $userManager->updateTempPwd($randomInt, $mail);
+        //if($userInfo) {
+            
+            require('controller/mailController.php');
+            sendTempPwd($mail, $randomInt);
+            
+        //} 
+        require ('view/frontend/recoverPass.php');     
 
     }else {
         throw new Exception('Vous n\'avez pas saisi d\'email valide <br /> Vous n\'êtes donc pas autorisé à accéder à l\'administration');

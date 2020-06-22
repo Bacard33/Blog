@@ -9,18 +9,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Billet simple pour l'Alaska</title>
         <link rel="stylesheet" href="public/css/p4_blog.css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
          
     </head>
     <body>
         <div class="container-fluid">
-            <div class="jumbotron row" id="administration">
+            <div class="jumbotron row">
                 
-                <h2 class="text-center">Espace Administration</h2>   
+                <h2 class="text-center" id="admin">Espace Administration</h2>   
                     <h3 class="text-center">Bienvenue Mr Forteroche, vous êtes maintenant connecté à votre espace d'administration</h3>
                         <?php if(!empty($_POST['submit'] == "Publier")) { ?>
                             <div class="modal-content">
