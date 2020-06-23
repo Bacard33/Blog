@@ -35,9 +35,16 @@
                   </div>
       
                   <div class="form-group">
-                    <label class="control-label col-sm-4" for="pwd">Mot de passe : </label>
+                    <label class="control-label col-sm-4" for="pwd">Mot de passe temporaire : </label>
                       <div class="col-sm-5"> 
-                        <input type="password" class="form-control" id="mdp" name="password" placeholder="Votre mot de passe" required>
+                        <input type="password" class="form-control" id="mdp" name="temp_password" placeholder="Mot de passe temporaire" required>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="pwd">Nouveau mot de passe : </label>
+                      <div class="col-sm-5"> 
+                        <input type="password" class="form-control" id="mdp" name="new_password" placeholder="Votre nouveau mot de passe" required>
                       </div>
                   </div>
       

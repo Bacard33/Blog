@@ -131,12 +131,8 @@ try {
 
         // Affiche la page de connexion pour l'administrateur en cas de réinitialisation du mdp
         elseif($_GET['action'] == 'new_connexion') {
-             
-            if ($_SESSION['admin']== 1){
-                require ('view/frontend/admin.php');
-            }else{
+                        
                 loginAdminNew();
-            }
         }
         // Affiche la page en cas d'oubli du mdp
         elseif($_GET['action'] == 'forget') {

@@ -16,14 +16,14 @@ function sendTempPwd($mail, $randomInt)
     try
     {
         // Paramètrages du serveur d'envoi smtp
-        $mail->SMTPDebug = 3;
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.ionos.fr';
+        $mail->SMTPDebug = false;
+        $mail->isSendmail();
+        $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'ne-pas-repondre@p4blog.béatricepiat.com';
-        $mail->Password   = 'dNR-N4B-SbX-FwB';
+        $mail->Username   = 'contact.bpiat@gmail.com';
+        $mail->Password   = 'Baopendrive';
         $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;// ou 465 ou 25
+        $mail->Port       = 465;
         $mail->SMTPOptions = array(
                     'ssl' => array(
                         'verify_peer' => false,
@@ -34,12 +34,12 @@ function sendTempPwd($mail, $randomInt)
         
         // Destinataire
         $mail->setFrom('forteroche@mail.fr', '[Administrateur Blog Alaska]');
-        $mail->addAddress('jf@p4blog.béatricepiat.com'); 
-        $mail->addAddress('bacard@netcourrier.com');
+        $mail->addAddress('bacard@netcourrier.com'); 
+        
         // Contenu
         $mail->isHTML(true);
         $mail->Subject = '[Blog Alaska] Votre nouveau mot de passe';
-        $mail->Body    = 'Bonjour, <br>Voici votre nouveau mot de passe temporaire : '. $randomInt . '<br>Cordialement,<br>L\'administration du site';
+        $mail->Body    = 'Bonjour, <br>Voici votre mot de passe temporaire : '. $randomInt . '<br>Cordialement,<br>L\'administration du site';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         // Envoi
