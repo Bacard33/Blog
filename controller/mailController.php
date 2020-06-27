@@ -11,7 +11,6 @@ require 'PHPMailer/src/SMTP.php';
 // Envoi d'un mail avec un nouveau mot de passe en cas de mot de passe oublié
 function sendTempPwd($mail, $randomInt)
 {
-    
     $mail = new PHPMailer;
     try
     {
@@ -48,7 +47,7 @@ function sendTempPwd($mail, $randomInt)
     }
     catch (Exception $e)
     {
-        echo "Votre message n'a pas pu être envoyé. Type d'erreur: {$mail->ErrorInfo}.<br>Retour à la <a href='index.php?action=connexion'>page précédente</a>";
+        echo "Votre message n'a pas pu être envoyé. Type d'erreur: {$mail->ErrorInfo}.";
     }
 
 }

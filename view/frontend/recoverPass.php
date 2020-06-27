@@ -21,7 +21,7 @@
           <div class="connex-form" id="new-pass">
             <h2 class="text-center" id="temp_pwd">Mot de passe oublié ?</h2>
               <h3 class="text-center">Vous allez recevoir d'ici quelques instants un e-mail contenant un mot de passe temporaire</h3>
-              <button type="submit" class="btn btn-default" id="log"><a href="index.php?action=new_connexion">Administration - Connexion -</a></button>
+              <button type="submit" class="btn btn-default" id="log"><a href="index.php?action=connexion">Administration - Connexion -</a></button>
           </div>
         </div>
       </div>

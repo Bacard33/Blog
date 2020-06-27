@@ -128,12 +128,6 @@ try {
                 loginAdmin();
             }
         }
-
-        // Affiche la page de connexion pour l'administrateur en cas de réinitialisation du mdp
-        elseif($_GET['action'] == 'new_connexion') {
-                        
-                loginAdminNew();
-        }
         // Affiche la page en cas d'oubli du mdp
         elseif($_GET['action'] == 'forget') {
              

@@ -59,11 +59,6 @@ function loginAdmin() {
 
     require ('view/frontend/login.php');
 }
-// Accès connexion admin après réinitialisation mdp
-function loginAdminNew() {
-
-    require ('view/frontend/loginNewPass.php');
-}
 // Oubli du mdp
 function forgetPass() {
 
@@ -96,13 +91,10 @@ function readAdmin($mail) {
 
         $randomInt = rand(1000000, 999999999);
         $tempPwd = hash('md5', $randomInt);
-        $userInfo = $userManager->updateTempPwd($randomInt, $mail);
-        //if($userInfo) {
-            
-            require('controller/mailController.php');
-            sendTempPwd($mail, $randomInt);
-            
-        //} 
+        $userInfo = $userManager->updateTempPwd($tempPwd, $mail);
+        
+        require('controller/mailController.php');
+        sendTempPwd($mail, $randomInt);        
         require ('view/frontend/recoverPass.php');     
 
     }else {

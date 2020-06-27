@@ -143,6 +143,9 @@ i.fas.fa-trash-alt{
 span.psw {
   float: right;
 }
+button.btn.btn-default.psw {
+  float: right;
+}
 #log {
   float: right;
 }
