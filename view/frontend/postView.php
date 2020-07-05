@@ -34,11 +34,11 @@
                <form action="index.php?action=addComment&amp;id=<?php echo $post['id']; ?>&amp;nbcomment=<?php echo $post['nbcomment']; ?>" method="post">
                   <div class="form-group col-md-4">
                      <label for="author">Pseudo</label><br />
-                        <input type="text" class="form-control" placeholder="Votre pseudo" id="pseudo" name="pseudo">
+                        <input type="text" class="form-control" placeholder="Votre pseudo" id="pseudo" name="pseudo" required>
                      </div>
                      <div class="form-group col-md-8">
                         <label for="comment">Commentaire</label><br />
-                           <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Votre message"></textarea>
+                           <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Votre message" required></textarea>
                      </div>
                         <div class="form-group col-md-12">
                            <input type="submit" class="btn btn-default pull-right" value="Valider">

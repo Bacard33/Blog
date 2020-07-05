@@ -24,8 +24,8 @@
         <div class="container-fluid">
             <div class="jumbotron row">
                 <div class="container">
-                    <h1>Billet simple pour l'Alaska</h1>
-                        <h2 class="text-center" id="update">Afficher un chapitre pour le lire, modifier ou supprimer</h2>
+                    <h2 class="text-center" id="update">Billet simple pour l'Alaska</h2>
+                        <h3 class="text-center">Afficher un chapitre pour le lire, modifier ou supprimer</h3>
                             <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
             
                                 <table class="table table-hover">
@@ -51,4 +51,4 @@
 </html>
 
 <?php  $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php require('view/frontend/template.php'); ?>

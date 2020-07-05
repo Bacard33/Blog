@@ -108,6 +108,16 @@ try {
                 throw new Exception('Vous n\'êtes pas autorisé à accéder à l\'administration');
             }
         }
+        // Réinitialisation du mot de passe par l'administrateur
+        elseif ($_GET['action'] == "saveNewPass") {
+            
+            if ($_POST['password'] == $_POST['confirm_password']) {
+
+                controlAdmin($mail, $password, $temp_password);
+            }else{
+                throw new Exception('Vos mots de passe sont incorrects');
+            }
+        }
         // recherche email admin dans BDD
         elseif ($_GET['action'] == "readAdmin") {
 
@@ -123,7 +133,7 @@ try {
         elseif($_GET['action'] == 'connexion') {
              
             if ($_SESSION['admin']== 1){
-                require ('view/frontend/admin.php');
+                require ('view/backend/admin.php');
             }else{
                 loginAdmin();
             }

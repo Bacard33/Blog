@@ -17,8 +17,8 @@
       <body>
          <div class="container-fluid">
             <div class="jumbotron row">
-               <h1>Billet simple pour l'Alaska</h1>
-                  <h2 class="text-center" id="create">Créer un chapitre</h2>
+               <h2 class="text-center" id="create">Billet simple pour l'Alaska</h2>
+                  <h3 class="text-center">Créer un chapitre</h3>
                
                      <form action="index.php?action=createNewPost" method="post">
                         <div class="form-group">
@@ -49,4 +49,4 @@
    </html>
    
    <?php $content = ob_get_clean(); ?>
-   <?php require('template.php'); ?>
+   <?php require('view/frontend/template.php'); ?>

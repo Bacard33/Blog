@@ -29,11 +29,11 @@ class UserManager extends Manager
     }
     // Permet de renvoyer un nouveau mot de passe à l'admin 
     public function updateTempPwd($randomInt, $mail) {
-        //var_dump($randomInt, $mail); $randomInt renvoie suite de chiffres
-        //die();
+
+        $pass = hash('md5', $_POST['password']);
         $db = $this->dbConnect();
-        $tempPassword = $db->prepare('UPDATE users SET password = ? WHERE mail = ?');
-        $randomInt = $tempPassword->execute(array($randomInt, $mail));       
-   
+        $req = $db->prepare('UPDATE users SET password = ? WHERE mail = ?');
+        $req->execute(array($randomInt, $mail));       
+        $userInfo = $req->fetch();
     }
 }

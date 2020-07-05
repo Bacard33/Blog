@@ -93,31 +93,31 @@ i.fas.fa-trash-alt{
 }
 /* Titres vues */
 #admin {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #errorPage {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #forget {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #login {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #create {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #update {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #modif {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #list {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 #chap {
-  margin-top: 2em;
+  margin-top: 2em!important;
 }
 /* Formulaire de connexion */
 .connex-form {

@@ -18,8 +18,8 @@
     <body>
         <div class="container">    
             <div class="row-fluid">
-                <h1>Billet simple pour l'Alaska</h1>
-                    <h2 class="text-center" id="list">Voici ici la liste des commentaires signalés :</h2> 
+                <h2 class="text-center" id="list">Billet simple pour l'Alaska</h2>
+                    <h3 class="text-center">Voici ici la liste des commentaires signalés :</h3> 
                         <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button> 
                         <br /><br />         
                             <table class="table table-hover"> 
@@ -53,4 +53,4 @@
 </html>
 
 <?php  $content = ob_get_clean(); ?>
-<?php require('template.php') ?>
+<?php require('view/frontend/template.php') ?>

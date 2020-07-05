@@ -9,7 +9,7 @@ require_once('model/UserManager.php');
 // Création d'un chapitre
 function newPost() {
     
-    require 'view/frontend/newPost.php';
+    require 'view/backend/newPost.php';
 
 }
 function createNewPost($title, $content) {
@@ -17,7 +17,7 @@ function createNewPost($title, $content) {
     $Manager = new p4_blog\model\PostManager();
     $createNewPost = $Manager->createNewPost($title, $content);
     
-    require 'view/frontend/admin.php';
+    require 'view/backend/admin.php';
 
 }
 // Récupère la liste des chapitres
@@ -26,7 +26,7 @@ function updatePost() {
     $postManager = new p4_blog\model\PostManager();
     $posts = $postManager->getAllPosts();
     
-    require 'view/frontend/postUpdate.php';
+    require 'view/backend/postUpdate.php';
 }
 // Affiche le chapitre à modifier
 function viewUpdatePost() {
@@ -34,7 +34,7 @@ function viewUpdatePost() {
     $postManager = new p4_blog\model\PostManager();
     $post = $postManager->getPost($_GET['id']);
 
-    require 'view/frontend/viewPostUpdate.php';
+    require 'view/backend/viewPostUpdate.php';
 }
 //Validation du chapitre modifié
 function confirmUpdatePost($title, $content, $id) {
@@ -42,7 +42,7 @@ function confirmUpdatePost($title, $content, $id) {
     $postManager = new p4_blog\model\PostManager();
     $post = $postManager->confirmUpdatePost($title, $content, $_GET['id']);
 
-    require 'view/frontend/admin.php';
+    require 'view/backend/admin.php';
 }
 // Supprime un chapitre
 function deletePost() {
@@ -50,7 +50,7 @@ function deletePost() {
     $postManager = new p4_blog\model\PostManager();
     $deletePost = $postManager->deletePost($_GET['id']);
     
-    require 'view/frontend/admin.php';
+    require 'view/backend/admin.php';
 }
 
 // Affiche la liste des commentaires signalés
@@ -59,7 +59,7 @@ function listReportedComment() {
     $commentManager = new p4_blog\model\CommentManager();
     $s_comments = $commentManager->listReportedComment();
 
-    require('view/frontend/viewReportedComment.php');
+    require('view/backend/viewReportedComment.php');
     
 }
 
@@ -70,7 +70,7 @@ function approveComment($commentId) {
     $reportedComment = $commentManager->approveComment($commentId);  
     $s_comments = $commentManager->listReportedComment();
 
-    require('view/frontend/viewReportedComment.php');
+    require('view/backend/viewReportedComment.php');
     
 }
 // Supprime un commentaire signalé 
@@ -84,5 +84,5 @@ function deleteComment($commentId) {
     $deleteComment = $commentManager->deleteComment($commentId);
     $s_comments = $commentManager->listReportedComment();
 
-    require('view/frontend/viewReportedComment.php');    
+    require('view/backend/viewReportedComment.php');    
 }
