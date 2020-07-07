@@ -110,10 +110,11 @@ try {
         }
         // Réinitialisation du mot de passe par l'administrateur
         elseif ($_GET['action'] == "saveNewPass") {
-            
+            //var_dump($_POST['mail'], $_POST['password'], $_POST['confirm_password'], $_POST['temp_password']);
+            //die();
             if ($_POST['password'] == $_POST['confirm_password']) {
 
-                controlAdmin($mail, $password, $temp_password);
+                controlAdmin($_POST['mail'], $_POST['password'], $_POST['temp_password']);
             }else{
                 throw new Exception('Vos mots de passe sont incorrects');
             }
