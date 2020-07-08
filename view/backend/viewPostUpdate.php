@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
       <?php  $title = "Modification d'un chapitre"; ?>
@@ -17,7 +18,7 @@
       <body>
          <div class="container-fluid">
             <div class="jumbotron row">
-               <h1>Billet simple pour l'Alaska</h1>
+               <h2 class="text-center" id="update_chapter">Billet simple pour l'Alaska</h2>
                   <h2 class="text-center" id="modif">Modifier un chapitre</h2>
                
                      <form action="index.php?action=confirmUpdatePost&amp;id=<?php echo $post['id'] ?>" method="post">

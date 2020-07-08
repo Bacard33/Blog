@@ -40,8 +40,11 @@ try {
         }
         // Affiche la liste des commentaires signalés
         elseif($_GET['action'] == 'listReportedComment') {
-
-            listReportedComment();   
+            if($_SESSION['admin']== 1){
+                listReportedComment();
+            }else{
+                throw new Exception('Vous n\'êtes pas autorisé à accéder à l\'administration');
+            } 
         }
         // Accepte le commentaire signalé
         elseif($_GET['action'] == 'okComment') {
@@ -54,9 +57,12 @@ try {
             deleteComment($_GET['id']); 
         }
         // Affiche la page de création d'un chapitre
-        elseif($_GET['action'] == 'newPost') {
-            
-            newPost();   
+        elseif($_GET['action'] == 'newPost') { 
+            if($_SESSION['admin']== 1) {  
+                newPost();
+            }else{
+                throw new Exception('Vous n\'êtes pas autorisé à accéder à l\'administration');
+            } 
         }
         // Créé un nouveau chapitre
         elseif($_GET['action'] == 'createNewPost') {
@@ -70,7 +76,9 @@ try {
             
             if($_SESSION['admin']== 1) {  
                 updatePost();
-            }
+            }else{
+                throw new Exception('Vous n\'êtes pas autorisé à accéder à l\'administration');
+            } 
         }
         // Sélectionne le chapitre à modifier
         elseif ($_GET['action'] == 'view_update') {
@@ -110,8 +118,7 @@ try {
         }
         // Réinitialisation du mot de passe par l'administrateur
         elseif ($_GET['action'] == "saveNewPass") {
-            //var_dump($_POST['mail'], $_POST['password'], $_POST['confirm_password'], $_POST['temp_password']);
-            //die();
+            
             if ($_POST['password'] == $_POST['confirm_password']) {
 
                 controlAdmin($_POST['mail'], $_POST['password'], $_POST['temp_password']);

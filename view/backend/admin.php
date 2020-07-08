@@ -28,7 +28,7 @@
                             <div class="modal-content">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="fade-in">
-                                        <h2>Votre nouveau chapitre a bien été ajouté</h2>   
+                                        <h3 class="text-center">Votre nouveau chapitre a bien été ajouté</h3>   
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                             <div class="modal-content">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="fade-in">
-                                        <h2>Votre chapitre a bien été modifié</h2>   
+                                        <h3 class="text-center">Votre chapitre a bien été modifié</h3>   
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="modal-content">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="fade-in">
-                                        <h2>Votre chapitre a bien été supprimé</h2>   
+                                        <h3 class="text-center">Votre chapitre a bien été supprimé</h3>   
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <div class="modal-content">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="fade-in">
-                                        <h2>Votre nouveau mot de passe a bien été enregistré</h2>   
+                                        <h3 class="text-center">Votre nouveau mot de passe a bien été enregistré</h3>   
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                                                         </div>     
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                                                <input type="submit" class="btn btn-primary">Sauvegarder
+                                                                <input type="submit" class="btn btn-primary" name="submit" value="Sauvegarder">
                                                             </div>
                                                     </form>    
                                                 </div>        

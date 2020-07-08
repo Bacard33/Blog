@@ -20,7 +20,7 @@
 
         <!-- Grid column -->
         <div class="row text-center">
-          <h2>Suivez-moi !</h2>
+          <h6 class="text-uppercase font-weight-bold">Suivez-moi !</h6>
             <!-- Facebook -->
             <a class="btn btn-default">
               <i class="fab fa-facebook-square fa-2x"></i>
