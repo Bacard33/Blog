@@ -13,15 +13,14 @@ function espaceAdmin($mail, $password) {
     $userInfo = $userManager->espaceAdmin($mail, $password);
 
     if($pass == $userInfo['password']) {
-        
-            if($_SESSION['admin']=1) {
-                require 'view/backend/admin.php';
-            }            
-        }else{ 
-            //Si les informations sont mauvaises / L'administrateur n'est pas connecté 
-            $_SESSION['admin']=0;
+        if($_SESSION['admin']=1) {
+            require 'view/backend/admin.php';
+        }            
+    }else{ 
+    //Si les informations sont mauvaises / L'administrateur n'est pas connecté 
+        $_SESSION['admin']=0;
             throw new Exception('Erreur de connexion : Veuillez vérifier vos identifiants.');
-        }
+    }
 }
 // Accès espace admin après mise à jour du mdp
 function controlAdmin($mail, $password, $temp_password) {
@@ -31,11 +30,8 @@ function controlAdmin($mail, $password, $temp_password) {
     $userInfo = $userManager->readAdmin($mail);
 
     if($userInfo) {
-        //var_dump("----2----");//ne passe pas
-        //die();
+        
         if($pass == $userInfo['password']) {
-            //var_dump("expression");// ne passe pas ici
-            //die();
             //mise à jour mdp
             $tempPwd = hash('md5', $password);
             $userInfo = $userManager->updateTempPwd($tempPwd, $mail);
@@ -43,8 +39,7 @@ function controlAdmin($mail, $password, $temp_password) {
         }else {
             throw new Exception('Erreur : Vos identifiants sont incorrects.');
         }
-    }
-    
+    }    
 }
 // Compare l'email avec celui de la BDD
 function readAdmin($mail) {
@@ -61,7 +56,6 @@ function readAdmin($mail) {
         require('controller/mailController.php');
         sendTempPwd($mail, $randomInt);        
         require ('view/backend/recoverPass.php');     
-
     }else {
         throw new Exception('Vous n\'avez pas saisi d\'email valide <br /> Vous n\'êtes donc pas autorisé à accéder à l\'administration');
     }
@@ -70,7 +64,6 @@ function readAdmin($mail) {
 function newPost() {
     
     require 'view/backend/newPost.php';
-
 }
 function createNewPost($title, $content) {
     
@@ -78,7 +71,6 @@ function createNewPost($title, $content) {
     $createNewPost = $Manager->createNewPost($title, $content);
     
     require 'view/backend/admin.php';
-
 }
 // Récupère la liste des chapitres
 function updatePost() {
@@ -119,10 +111,8 @@ function listReportedComment() {
     $commentManager = new p4_blog\model\CommentManager();
     $s_comments = $commentManager->listReportedComment();
 
-    require('view/backend/viewReportedComment.php');
-    
+    require('view/backend/viewReportedComment.php');    
 }
-
 // Autorise le commentaire signalé et empêche le signalement
 function approveComment($commentId) {
     
@@ -130,8 +120,7 @@ function approveComment($commentId) {
     $reportedComment = $commentManager->approveComment($commentId);  
     $s_comments = $commentManager->listReportedComment();
 
-    require('view/backend/viewReportedComment.php');
-    
+    require('view/backend/viewReportedComment.php');    
 }
 // Supprime un commentaire signalé 
 function deleteComment($commentId) {

@@ -7,7 +7,6 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-
 // Envoi d'un mail avec un nouveau mot de passe en cas de mot de passe oublié
 function sendTempPwd($mail, $randomInt)
 {
@@ -30,7 +29,6 @@ function sendTempPwd($mail, $randomInt)
                         'allow_self_signed' => true
                     )
                 );
-        
         // Destinataire
         $mail->setFrom('forteroche@mail.fr', '[Administrateur Blog Alaska]');
         $mail->addAddress('bacard@netcourrier.com'); 
@@ -49,5 +47,4 @@ function sendTempPwd($mail, $randomInt)
     {
         echo "Votre message n'a pas pu être envoyé. Type d'erreur: {$mail->ErrorInfo}.";
     }
-
 }

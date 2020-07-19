@@ -15,7 +15,6 @@ class CommentManager extends Manager
         
         return $comments;
     }
-    
     //Création d'un commentaire
     public function postComment($postId, $pseudo, $comment)
     {
@@ -25,7 +24,6 @@ class CommentManager extends Manager
     
         return $affectedLines;
     }
-
     //Récupère un commentaire 
     public function getComment($id)
     {
@@ -36,7 +34,6 @@ class CommentManager extends Manager
 
         return $comment;
     }
-    
     //Signalement d'un commentaire
     public function reportedComment($id)
     {
@@ -56,7 +53,6 @@ class CommentManager extends Manager
 
         return $listcomments;
     }
-
     //Signalement du commentaire approuvé
     public function approveComment($id)
     { 
@@ -69,8 +65,6 @@ class CommentManager extends Manager
     //Suppression du commentaire signalé
     public function deleteComment($id)
     {
-        //var_dump($nbcomment, $id);
-        //die();
         $db = $this->dbConnect();
         $deleteComment = $db->prepare('DELETE FROM comments WHERE id = ?');
         $deleteComment->execute(array($id));

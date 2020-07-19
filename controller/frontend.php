@@ -5,7 +5,6 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/UserManager.php');
 
-
 //Récupère la liste des chapitres
 function listPosts()
 {
@@ -14,7 +13,6 @@ function listPosts()
     
     require('view/frontend/homeView.php');
 }
-
 //Récupère un chapitre 
 function post()
 {
@@ -26,7 +24,6 @@ function post()
     
     require('view/frontend/postView.php');
 }
-
 // Ajoute un commentaire au chapitre 
 function addComment($postId, $pseudo, $comment)
 {
@@ -40,11 +37,9 @@ function addComment($postId, $pseudo, $comment)
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
-
 // Signale un commentaire
 function reportedComment($commentId, $postId) {
     
@@ -53,7 +48,6 @@ function reportedComment($commentId, $postId) {
     
     header('Location: index.php?action=post&id=' . $postId);   
 }
-
 // Accès connexion admin
 function loginAdmin() {
 

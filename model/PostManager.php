@@ -14,7 +14,6 @@ class PostManager extends Manager
         $req->execute();
         return $req;
     }
-
     //Récupère un chapitre
     public function getPost($postId)
     {  
@@ -33,7 +32,6 @@ class PostManager extends Manager
 
         return $req;
     }
-
     //Mise à jour avec incrémentation du nbre de commentaires
     public function updatePostNbCom($id, $action) {
 
@@ -63,7 +61,6 @@ class PostManager extends Manager
 
         return $req;
     }
-    
     //Création d'un chapitre
     public function createNewPost($title, $content) {
         $bd = $this->dbConnect();
@@ -81,5 +78,4 @@ class PostManager extends Manager
 
         return $deletePost;
     }
-
 }
