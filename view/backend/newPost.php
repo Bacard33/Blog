@@ -1,8 +1,9 @@
+﻿<!DOCTYPE html>
+<html lang="fr-FR">
 <?php session_start(); ?>
-<?php  $title = "Création d'un chapitre"; ?>
 <?php ob_start(); ?>
+<?php require('view/frontend/header.php') ?>
 
-<html>
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,31 +21,29 @@
          <div class="jumbotron row">
             <h2 class="text-center" id="create">Billet simple pour l'Alaska</h2>
             <h3 class="text-center">Créer un chapitre</h3>
-               
-            <form action="index.php?action=createNewPost" method="post">
-               <div class="form-group">
-                  <input type="submit" class="btn btn-primary" name="submit" value="Publier">
-                  <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
-               </div> 
-               <script>
-                  tinymce.init({
-                     selector: '#mytextarea'
-                  });
-               </script>
-               <div class="form-group">
-                  <label for="title">Titre</label>
-                  <input type="text" class="form-control" id="title" name="title" placeholder="Titre du chapitre"  required>
-               </div>
-               <div class="form-group">
-                  <label for="postContent">Contenu du chapitre</label>
-                  <textarea id="mytextarea" name="content" rows="15"></textarea>
-               </div>
-               <input type="submit" class="btn btn-primary" name="submit" value="Publier"> 
-            </form>
+               <form action="index.php?action=createNewPost" method="post">
+                  <div class="form-group">
+                     <input type="submit" class="btn btn-primary" name="submit" value="Publier">
+                     <button type="submit" class="btn btn-default"><a href="index.php?action=connexion"> Retour</a></button>
+                  </div>
+                  <script>
+                     tinymce.init({
+                        selector: '#mytextarea'
+                     });
+                  </script>
+                  <div class="form-group">
+                     <label for="title">Titre</label>
+                     <input type="text" class="form-control" id="title" name="title" placeholder="Titre du chapitre"  required>
+                  </div>
+                  <div class="form-group">
+                     <label for="postContent">Contenu du chapitre</label>
+                     <textarea id="mytextarea" name="content" rows="15"></textarea>
+                  </div>
+                  <input type="submit" class="btn btn-primary" name="submit" value="Publier"> 
+               </form>
          </div>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    </body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>
-<?php $content = ob_get_clean(); ?>
-<?php require('view/template.php'); ?>
+<?php require('view/frontend/footer.php') ?>
