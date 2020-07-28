@@ -6,12 +6,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Billet simple pour l'Alaska</title>
-        <meta name="description" content="Projet 4 Openclassrooms. Réalisation d'un blog pour un écrivain en PHP avec Mysql en suivant une architecture MVC.">
-        <meta name="author" content="Béatrice Piat">
         <link rel="stylesheet" href="public/css/p4_blog.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-        <script src="https://cdn.tiny.cloud/1/i53cfoz3cdbd6wjz3xguaidinere4i15054cqxueuwk22jnm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -25,7 +22,7 @@
         ==================================================--> 
             <nav class="navbar navbar-inverse navbar-fixed-top">          
                 <div class="navbar-header">
-                    <a class="ancre" href="index.php">Billet simple pour l'Alaska</a>
+                    <a class="ancre" href="index.php#carousel">Billet simple pour l'Alaska</a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -59,3 +56,4 @@
             </nav>
         </div>
     </header>
+</html>

@@ -45,5 +45,5 @@
       </div>
    </body>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <?php require('view/frontend/footer.php') ?>
 </html>
-<?php require('view/frontend/footer.php') ?>

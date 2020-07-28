@@ -71,4 +71,13 @@ class CommentManager extends Manager
 
         return $deleteComment;
     }
+    //Suppression des commentaires d'un chapitre supprimé
+    public function deleteAllComments($id)
+    {
+        $db = $this->dbConnect();
+        $deleteAllComments = $db->prepare('DELETE FROM comments WHERE post_id = ?');
+        $deleteAllComments->execute(array($id));
+
+        return $deleteAllComments;
+    }
 }

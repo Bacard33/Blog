@@ -1,4 +1,5 @@
-﻿<footer class="page-footer-fluid font-small lighten-5" id="page-down" data-spy="scroll" data-target=".page-footer">
+﻿<?php ob_start(); ?>
+<footer class="page-footer-fluid font-small lighten-5" id="page-down" data-spy="scroll" data-target=".page-footer">
   <div style="background-color: #101010; color: #9d9d9d;">
     <div class="container">
       <!-- Grid row-->

@@ -1,4 +1,5 @@
 ﻿<?php require('view/frontend/header.php') ?>
+<?php ob_start(); ?>
 <div class="container-fluid">
     <div class="jumbotron row" >
         <div class="fade-in">

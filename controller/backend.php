@@ -98,9 +98,11 @@ function confirmUpdatePost($title, $content, $id) {
 }
 // Supprime un chapitre
 function deletePost() {
-    
+
     $postManager = new p4_blog\model\PostManager();
+    $commentManager = new p4_blog\model\CommentManager();
     $deletePost = $postManager->deletePost($_GET['id']);
+    $deleteAllComments = $commentManager->deleteAllComments($_GET['id']);
     
     require 'view/backend/admin.php';
 }

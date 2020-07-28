@@ -2,24 +2,17 @@
 <html lang="fr">
 
     <head>
-        
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Billet simple pour l'Alaska</title>
-        <meta name="description" content="Projet 4 Openclassrooms. Réalisation d'un blog pour un écrivain en PHP avec Mysql en suivant une architecture MVC.">
-        <meta name="author" content="Béatrice Piat">
-        <link rel="stylesheet" href="public/css/p4_blog.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-        <script src="https://cdn.tiny.cloud/1/i53cfoz3cdbd6wjz3xguaidinere4i15054cqxueuwk22jnm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    </head>
-    <div class="container-fluid">    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Billet simple pour l'Alaska</title>
+      <link rel="stylesheet" href="public/css/p4_blog.css">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link rel="stylesheet" href="public/css/p4_blog.css">
+   </head>
+   <div class="container-fluid">    
         <header>
             <!--Navigation
              ==================================================--> 
@@ -117,13 +110,11 @@
             ?>
         </div>
     </div>
-    <?php $content = ob_get_clean(); ?>
-    <?php ob_start(); ?>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Javascript de Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/ccocp9mhg9jtkqu6n0kobmpx1cp45o4h6xlv1jihacrx9rfi/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> 
+    
     <script>
         // Scroll fluide menu top
         $(function () {

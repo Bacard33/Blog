@@ -1,4 +1,5 @@
 ﻿<?php require('view/frontend/header.php') ?>
+<?php ob_start(); ?>
 <body>  
    <div class="container-fluid">
       <div class="jumbotron row" id="publications">
@@ -46,4 +47,3 @@
    </div>
 </body>
 <?php require('view/frontend/footer.php') ?>
-</html>

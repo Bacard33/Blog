@@ -6,11 +6,11 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
-    //Récupère les 5 derniers chapitres
+    //Récupère tous les chapitres
     public function getPosts()
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+        $req = $db->prepare('SELECT id, title, content, nbcomment, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM posts ORDER BY creation_date');
         $req->execute();
         return $req;
     }
@@ -42,9 +42,11 @@ class PostManager extends Manager
         
         if ($action == 'add') { 
             $nbcomment = $post['nbcomment']+1;
+            $reported_comment = $post['reported_comment']+1;
             
         }elseif ($action == 'del') {
             $nbcomment = $post['nbcomment']-1;
+            $reported_comment = $post['reported_comment']-1;
         } 
                                                 
         $req= $db->prepare('UPDATE posts SET nbcomment = ? WHERE id = ?');

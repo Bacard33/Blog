@@ -1,4 +1,5 @@
 ﻿<?php session_start(); ?> 
+<?php ob_start(); ?>
 <?php require('view/frontend/header.php') ?>
 <div class="container-fluid">
   <div class="jumbotron row">
