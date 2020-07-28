@@ -16,6 +16,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     </head>
+    <?php ob_start(); ?>
     <header>
         <div class="container-fluid">
         <!--Navigation

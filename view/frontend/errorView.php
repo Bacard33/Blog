@@ -1,4 +1,5 @@
 ﻿<?php require('view/frontend/header.php') ?>
+<?php ob_start(); ?>
 <div class="container-fluid">
   <div class="jumbotron row" >
     <h1 class="text-center" id="errorPage">Billet simple pour l'Alaska</h1>
