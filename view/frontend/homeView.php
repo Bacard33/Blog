@@ -6,11 +6,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Billet simple pour l'Alaska</title>
       <link rel="stylesheet" href="public/css/p4_blog.css">
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+      <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css' crossorigin="anonymous">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-      <link rel="stylesheet" href="public/css/p4_blog.css">
    </head>
    <div class="container-fluid">    
         <header>
@@ -111,9 +110,9 @@
         </div>
     </div>
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" crossorigin="anonymous"></script>
     <!-- Javascript de Bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     
     <script>
         // Scroll fluide menu top

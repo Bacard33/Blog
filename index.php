@@ -136,7 +136,6 @@ try {
                 throw new Exception('Vous n\'avez pas saisi d\'email valide');
             }
         }
-        
         // Affiche la page de connexion pour l'administrateur
         elseif($_GET['action'] == 'connexion') {
              
